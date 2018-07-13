@@ -1,0 +1,422 @@
+{
+	"info": {
+		"_postman_id": "dfab310f-39d1-466c-b2f3-cb1e548b728c",
+		"name": "Redmart",
+		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests an user can send?",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cart",
+			"description": "",
+			"item": [
+				{
+					"name": "/carts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "RETRIEVE the list of carts"
+					},
+					"response": [
+						{
+							"id": "00264dfd-40ed-4ca5-b448-f51e50ca279d",
+							"name": "/carts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "http://localhost:3000/carts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"GET_ALL_CARTS_DETAIL\",\n    \"total\": 1,\n    \"carts\": [\n        {\n            \"_id\": \"312314234534521231\",\n            \"owner\": {\n                \"owner_id\": \"123124235213124235\",\n                \"owner_name\": \"ABC\",\n                \"owner_email\": \"user@email.com\"\n            },\n            \"modified_date\": [\n                \"2018-07-13T07:02:36+00:00\",\n                \"2018-07-14T07:02:10+00:00\"\n            ],\n            \"total_price\": 1800,\n            \"status\": \"PENDING\",\n            \"products\": [\n                {\n                    \"product_id\": \"312314234534521231\",\n                    \"product_url\": \"LINK_HERE\",\n                    \"product_name\": \"Product 1\",\n                    \"brand\": \"Brand 1\",\n                    \"quantity\": 2,\n                    \"retail_price\": 1000,\n                    \"discount_price\": 900,\n                    \"price\": 900,\n                    \"currency\": \"USD\",\n                    \"subtotal\": 1800,\n                    \"category\": \"CATEGORY\",\n                    \"tag\": [\n                        \"tag_1\",\n                        \"tag_2\",\n                        \"tag_3\"\n                    ],\n                    \"images\": [\n                        \"PRODUCT_IMAGE_1\",\n                        \"PRODUCT_IMAGE_2\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/#{cart_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "Retrieves the specific cart base on the cartId"
+					},
+					"response": [
+						{
+							"id": "58374566-0d56-4102-94d7-7da4f08e7086",
+							"name": "/carts/312314234534521231",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://www.domain.com/carts/312314234534521231",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts",
+										"312314234534521231"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"GET_CART_DETAIL\",\n    \"cart\": {\n        \"_id\": \"312314234534521231\",\n        \"owner\": {\n            \"owner_id\": \"123124235213124235\",\n            \"owner_name\": \"ABC\",\n            \"owner_email\": \"user@email.com\"\n        },\n        \"modified_date\": [\n            \"2018-07-13T07:02:36+00:00\",\n            \"2018-07-14T07:02:10+00:00\"\n        ],\n        \"total_price\": 1800,\n        \"status\": \"PENDING\",\n        \"products\": [\n            {\n                \"product_id\": \"312314234534521231\",\n                \"product_url\": \"LINK_HERE\",\n                \"product_name\": \"Product 1\",\n                \"brand\": \"Brand 1\",\n                \"quantity\": 2,\n                \"retail_price\": 1000,\n                \"discount_price\": 900,\n                \"price\": 900,\n                \"currency\": \"USD\",\n                \"subtotal\": 1800,\n                \"category\": \"CATEGORY\",\n                \"tag\": [\n                    \"tag_1\",\n                    \"tag_2\",\n                    \"tag_3\"\n                ],\n                \"images\": [\n                    \"PRODUCT_IMAGE_1\",\n                    \"PRODUCT_IMAGE_2\"\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/#{cart_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "DELETE the specific cart base on the CART_ID"
+					},
+					"response": [
+						{
+							"id": "a1f52b6f-3255-4255-8af7-fce48f658ef1",
+							"name": "/carts",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://www.domain.com/carts/312314234534521231",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts",
+										"312314234534521231"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"DELETE_CART\",\n    \"message\": \"Cart deleted\",\n    \"helps\": [\n        {\n            \"description\": \"CREATE_CART\",\n            \"type\": \"POST\",\n            \"url\": \"http://localhost:3000/carts\",\n            \"body\": {\n                \"_id\": \"String\",\n                \"owner\": \"Object\",\n                \"modified_date\": \"Array of Date\",\n                \"total_price\": \"Number\",\n                \"status\": \"String\",\n                \"products\": \"String\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/#{cart_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "MODIFY the specific cart base on the CART_ID"
+					},
+					"response": [
+						{
+							"id": "4a082b3a-ec3d-4488-9f21-05dc05a1bb94",
+							"name": "/carts",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://www.domain.com/carts/312314234534521231",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts",
+										"312314234534521231"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"message\": \"Product updated\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/user/#{user_id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "RETRIEVE the specific cart base on the USER_ID"
+					},
+					"response": [
+						{
+							"id": "b431551b-e225-4ed0-8fbd-523c88f50ba1",
+							"name": "/carts/user/123124235213124235",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://www.domain.com/carts/user/123124235213124235",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts",
+										"user",
+										"123124235213124235"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"GET_CART_DETAIL\",\n    \"cart\": {\n        \"_id\": \"312314234534521231\",\n        \"owner\": {\n            \"owner_id\": \"123124235213124235\",\n            \"owner_name\": \"ABC\",\n            \"owner_email\": \"user@email.com\"\n        },\n        \"modified_date\": [\n            \"2018-07-13T07:02:36+00:00\",\n            \"2018-07-14T07:02:10+00:00\"\n        ],\n        \"total_price\": 2000,\n        \"status\": \"PENDING\",\n        \"products\": [\n            {\n                \"product_id\": \"312314234534521231\",\n                \"product_url\": \"LINK_HERE\",\n                \"product_name\": \"Product 1\",\n                \"brand\": \"Brand 1\",\n                \"quantity\": 2,\n                \"retail_price\": 1000,\n                \"discount_price\": 900,\n                \"price\": 900,\n                \"currency\": \"USD\",\n                \"subtotal\": 1800,\n                \"category\": \"CATEGORY\",\n                \"tag\": [\n                    \"tag_1\",\n                    \"tag_2\",\n                    \"tag_3\"\n                ],\n                \"images\": [\n                    \"PRODUCT_IMAGE_1\",\n                    \"PRODUCT_IMAGE_2\"\n                ]\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/user/#{user_id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "DELETE the specific cart base on the USER_ID"
+					},
+					"response": [
+						{
+							"id": "d33f9c82-13a0-4d2d-9fe9-63d90f819f90",
+							"name": "/carts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://www.domain.com/carts",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"DELETE_CART\",\n    \"message\": \"Cart deleted\",\n    \"helps\": [\n        {\n            \"description\": \"CREATE_CART\",\n            \"type\": \"POST\",\n            \"url\": \"http://localhost:3000/carts\",\n            \"body\": {\n                \"_id\": \"String\",\n                \"owner\": \"Object\",\n                \"modified_date\": \"Array of Date\",\n                \"total_price\": \"Number\",\n                \"status\": \"String\",\n                \"products\": \"String\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/user/#{user_id}",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "MODIFY the specific cart base on the USER_ID"
+					},
+					"response": [
+						{
+							"id": "837e896d-fa0f-4f05-8017-5b52991d93e5",
+							"name": "/carts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {},
+								"url": {
+									"raw": "https://www.domain.com/carts",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"message\": \"Product updated\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "ADD new cart to the cart sets"
+					},
+					"response": [
+						{
+							"id": "9cbe5fb3-bec5-46c3-b7f2-6ec7b3779d11",
+							"name": "/carts",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"type": "text",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"_id\": \"312314234534521231\",\n    \"owner\": {\n        \"owner_id\": \"123124235213124235\",\n        \"owner_name\": \"ABC\",\n        \"owner_email\": \"user@email.com\"\n    },\n    \"modified_date\": [\n        \"2018-07-13T07:02:36+00:00\",\n        \"2018-07-14T07:02:10+00:00\"\n    ],\n    \"total_price\": 2000,\n    \"status\": \"PENDING\",\n    \"products\": [\n        {\n            \"product_id\": \"312314234534521231\",\n            \"product_url\": \"LINK_HERE\",\n            \"product_name\": \"Product 1\",\n            \"brand\": \"Brand 1\",\n            \"quantity\": 2,\n            \"retail_price\": 1000,\n            \"discount_price\": 900,\n            \"price\": 900,\n            \"currency\": \"USD\",\n            \"subtotal\": 1800,\n            \"category\": \"CATEGORY\",\n            \"tag\": [\n                \"tag_1\",\n                \"tag_2\",\n                \"tag_3\"\n            ],\n            \"images\": [\n                \"PRODUCT_IMAGE_1\",\n                \"PRODUCT_IMAGE_2\"\n            ]\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://www.domain.com/carts",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"ADD_NEW_CART\",\n    \"message\": \"Adding new cart successfully\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_ALL_CART\",\n            \"url\": \"http://localhost:3000/carts\"\n        },\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
