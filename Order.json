@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "70b3e15c-e882-4baf-9433-9e9b842b19e5",
+		"name": "Oder",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "/order",
+					"path": [
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "f7999962-cde3-4ade-8a66-8a31d6072b86",
+					"name": "Orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/order",
+							"path": [
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "[\n    {\n        \"order_id\": \"00001\",\n        \"shipping_contact_name\": \"Nguyen Tran Thanh Binh\",\n        \"shipping_phone_number\": \"01677458116\",\n        \"shipping_address_1\": \"So 7 duong so 6\",\n        \"shipping_address_2\": \"So 1 Vo van Ngan\",\n        \"shipping_city\": \"Ho Chi Minh\",\n        \"shipping_state_region\": \"Ho Chi Minh\",\n        \"product_cost\": 500000,\n        \"discount\": 0,\n        \"tax\": 50000,\n        \"shipping_cost\": 20000,\n        \"total_cost\": 570000,\n        \"order_payment\": \"COD\",\n        \"order_payment_status\": \"none\",\n        \"ordered at\": \"2018-13-07T12:18z\",\n        \"order_status\": \"in process\",\n        \"shipping_day_expect\": \"2018-20-7\",\n        \"cancel_order\": \"no\",\n        \"customer_notes\": \"\",\n        \"products\": [\n            {\n                \"order_item_name\": \"durex-big-size\",\n                \"quantity\": 100,\n                \"title\": \"Protect your home\",\n                \"price\": 5000,\n                \"total\": 500000\n            }\n        ]\n    },\n    {\n        \"order_id\": \"00002\",\n        \"shipping_contact_name\": \"Nguyen Tran Thanh Binh\",\n        \"shipping_phone_number\": \"01677458116\",\n        \"shipping_address_1\": \"So 7 duong so 6\",\n        \"shipping_address_2\": \"So 1 Vo van Ngan\",\n        \"shipping_city\": \"Ho Chi Minh\",\n        \"shipping_state_region\": \"Ho Chi Minh\",\n        \"product_cost\": 500000,\n        \"discount\": 0,\n        \"tax\": 50000,\n        \"shipping_cost\": 20000,\n        \"total_cost\": 570000,\n        \"order_payment\": \"COD\",\n        \"order_payment_status\": \"none\",\n        \"ordered at\": \"2018-13-07T12:18z\",\n        \"order_status\": \"in process\",\n        \"shipping_day_expect\": \"2018-20-7\",\n        \"cancel_order\": \"no\",\n        \"customer_notes\": \"\",\n        \"products\": [\n            {\n                \"order_item_name\": \"durex-big-size\",\n                \"quantity\": 100,\n                \"title\": \"Protect your home\",\n                \"price\": 5000,\n                \"total\": 500000\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "order/#[order_id]",
+					"host": [
+						"order"
+					],
+					"path": [
+						""
+					],
+					"hash": "[order_id]"
+				}
+			},
+			"response": [
+				{
+					"id": "11079200-2421-474c-b3d1-692305718152",
+					"name": "Order",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "order_id",
+								"value": "00001",
+								"disabled": true
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "order/?order_id=00001",
+							"host": [
+								"order"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "order_id",
+									"value": "00001"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n        \"order_id\": \"00001\",\n        \"shipping_contact_name\": \"Nguyen Tran Thanh Binh\",\n        \"shipping_phone_number\": \"01677458116\",\n        \"shipping_address_1\": \"So 7 duong so 6\",\n        \"shipping_address_2\": \"So 1 Vo van Ngan\",\n        \"shipping_city\": \"Ho Chi Minh\",\n        \"shipping_state_region\": \"Ho Chi Minh\",\n        \"product_cost\": 500000,\n        \"discount\": 0,\n        \"tax\": 50000,\n        \"shipping_cost\": 20000,\n        \"total_cost\": 570000,\n        \"order_payment\": \"COD\",\n        \"order_payment_status\": \"none\",\n        \"ordered at\": \"2018-13-07T12:18z\",\n        \"order_status\": \"in process\",\n        \"shipping_day_expect\": \"2018-20-7\",\n        \"cancel_order\": \"no\",\n        \"customer_notes\": \"\",\n        \"products\": [\n            {\n                \"order_item_name\": \"durex-big-size\",\n                \"quantity\": 100,\n                \"title\": \"Protect your home\",\n                \"price\": 5000,\n                \"total\": 500000\n            }\n        ]\n}\n"
+				}
+			]
+		}
+	]
+}
