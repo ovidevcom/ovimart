@@ -1,0 +1,16 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "extends": [
+    "eslint:recommended",
+    "standard"
+  ],
+  "rules": {
+    "camelcase": "off"
+  }
+}
