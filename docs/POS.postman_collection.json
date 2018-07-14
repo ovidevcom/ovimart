@@ -1,0 +1,1427 @@
+{
+	"info": {
+		"_postman_id": "29816f67-87a1-41d5-af7d-ef3971e0020e",
+		"name": "POS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"description": "Manage store's products.",
+			"item": [
+				{
+					"name": "Gets a list of products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "1",
+								"description": "Current page "
+							},
+							{
+								"key": "limit",
+								"value": "10",
+								"description": "Limit number of returned items"
+							},
+							{
+								"key": "categories",
+								"value": "",
+								"description": "Filter by categories"
+							},
+							{
+								"key": "sku",
+								"value": "",
+								"description": "Search by sku"
+							},
+							{
+								"key": "brand",
+								"value": "",
+								"description": "Product's brand"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/products",
+							"path": [
+								"products"
+							]
+						},
+						"description": "Optional: Can search or filter products by query."
+					},
+					"response": [
+						{
+							"id": "6f2baec3-5a86-4a3d-906c-434f7db1c27e",
+							"name": "Get products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"user\",\n\t\"password\": 123456\n}"
+								},
+								"url": {
+									"raw": "/products",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"products\": [\n        {\n            \"_id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n            \"name\": \"Handmade Soft Gloves\",\n            \"slug\": \"handmade-soft-gloves\",\n            \"parent_id\": null,\n            \"sell_on_pos\": true,\n            \"sku\": \"OZDEMPX1-123\",\n            \"categories\": [\n                \"ee50c414-671d-4258-9bf3-587c1a6cc074\"\n            ],\n            \"brand_id\": \"5abcab0f-4632-4516-aa52-fbe6592a8abf\",\n            \"quantity\": 20,\n            \"price\": 12.99,\n            \"thumbnail\": \"http://lorempixel.com/640/480/fashion\",\n            \"images\": [\n                \"http://lorempixel.com/640/480/fashion\",\n                \"http://lorempixel.com/640/480/fashion\"\n            ],\n            \"description\": \"Voluptate voluptatem autem aut fugiat.\\nQuae asperiores debitis dolorem atque id eaque rerum id.\\nVelit sed ut quas quisquam.\",\n            \"attributes\": null,\n            \"variants\": [\n                {\n                    \"id\": 12,\n                    \"size\": \"XL\",\n                    \"Color\": \"Red\",\n                    \"inventory\": 12,\n                    \"sku\": \"IP7-1982-XL-RED\"\n                },\n                {\n                    \"id\": 13,\n                    \"size\": \"XL\",\n                    \"color\": \"Red\",\n                    \"inventory\": 12,\n                    \"sku\": \"IP7-1982-XL-RED\"\n                }\n            ],\n            \"status_code\": \"In-stock\",\n            \"created_at\": \"2019-03-30T06:30:09.207Z\",\n            \"updated_at\": \"2019-03-30T06:30:09.207Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Adds a new product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product\": {\n\t    \"name\": \"String | product's name\",\n\t    \"slug\": \"String | product's slug for seo and human-readable url\",\n\t    \"sku\": \"String | product's stock keeping unit\",\n\t    \"parent_id\": \"ObjectId | parent's product\",\n\t    \"sell_on_pos\": \"Boolean | whether this product list on pos or not\",\n\t    \"categories\": \"[ObjectId] | product's categories\",\n\t    \"brand_id\": \"ObjectId | product's brand\",\n\t    \"quantity\": \"Number | number of items in stock, available for selling\",\n\t    \"price\": \"Number | retail price\",\n\t    \"thumbnail\": \"String | thumbnail image\",\n\t    \"images\": \"[String] | list of product's image\",\n\t    \"description\": \"String | product's description, can be html\",\n\t    \"variants\": \"[Mixed] | list of product's options\",\n\t    \"attributes\": \"Mixed | product option if this product is a child to another product\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "/products",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a6bac025-e9ea-4b60-9df0-2b87e325ec9d",
+							"name": "Add a new product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"product\": {\n        \"_id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n        \"name\": \"Handmade Soft Gloves\",\n        \"slug\": \"handmade-soft-gloves\",\n        \"parent_id\": null,\n        \"sell_on_pos\": true,\n        \"sku\": \"OZDEMPX1-123\",\n        \"categories\": [\n            \"ee50c414-671d-4258-9bf3-587c1a6cc074\"\n        ],\n        \"brand_id\": \"5abcab0f-4632-4516-aa52-fbe6592a8abf\",\n        \"quantity\": 20,\n        \"price\": 12.99,\n        \"thumbnail\": \"http://lorempixel.com/640/480/fashion\",\n        \"images\": [\n            \"http://lorempixel.com/640/480/fashion\",\n            \"http://lorempixel.com/640/480/fashion\"\n        ],\n        \"description\": \"Voluptate voluptatem autem aut fugiat.\\nQuae asperiores debitis dolorem atque id eaque rerum id.\\nVelit sed ut quas quisquam.\",\n        \"attributes\": null,\n        \"variants\": [\n            {\n                \"id\": 12,\n                \"size\": \"XL\",\n                \"Color\": \"Red\",\n                \"inventory\": 12,\n                \"sku\": \"IP7-1982-XL-RED\"\n            },\n            {\n                \"id\": 13,\n                \"size\": \"XL\",\n                \"color\": \"Red\",\n                \"inventory\": 12,\n                \"sku\": \"IP7-1982-XL-RED\"\n            }\n        ]\n    }\n}"
+								},
+								"url": {
+									"raw": "/products",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\",\n\t\"product\": {\n\t    \"_id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n\t    \"name\": \"Handmade Soft Gloves\",\n\t    \"slug\": \"handmade-soft-gloves\",\n\t    \"parent_id\": null,\n\t    \"sell_on_pos\": true,\n\t    \"sku\": \"OZDEMPX1-123\",\n\t    \"categories\": [\n\t        \"ee50c414-671d-4258-9bf3-587c1a6cc074\"\n\t    ],\n\t    \"brand_id\": \"5abcab0f-4632-4516-aa52-fbe6592a8abf\",\n\t    \"quantity\": 20,\n\t    \"price\": 12.99,\n\t    \"thumbnail\": \"http://lorempixel.com/640/480/fashion\",\n\t    \"images\": [\n\t        \"http://lorempixel.com/640/480/fashion\",\n\t        \"http://lorempixel.com/640/480/fashion\"\n\t    ],\n\t    \"description\": \"Voluptate voluptatem autem aut fugiat.\\nQuae asperiores debitis dolorem atque id eaque rerum id.\\nVelit sed ut quas quisquam.\",\n\t    \"attributes\": null,\n\t    \"variants\": [\n\t        {\n\t            \"id\": 12,\n\t            \"size\": \"XL\",\n\t            \"Color\": \"Red\",\n\t            \"inventory\": 12,\n\t            \"sku\": \"IP7-1982-XL-RED\"\n\t        },\n\t        {\n\t            \"id\": 13,\n\t            \"size\": \"XL\",\n\t            \"color\": \"Red\",\n\t            \"inventory\": 12,\n\t            \"sku\": \"IP7-1982-XL-RED\"\n\t        }\n\t    ],\n\t    \"status_code\": \"In-stock\",\n\t    \"created_at\": \"2019-03-30T06:30:09.207Z\",\n\t    \"updated_at\": \"2019-03-30T06:30:09.207Z\"\n\t}\n}"
+						}
+					]
+				},
+				{
+					"name": "Updates a product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"product\": {\n\t    \"name\": \"String | product's name\",\n\t    \"slug\": \"String | product's slug for seo and human-readable url\",\n\t    \"sku\": \"String | product's stock keeping unit\",\n\t    \"parent_id\": \"ObjectId | parent's product\",\n\t    \"sell_on_pos\": \"Boolean | whether this product list on pos or not\",\n\t    \"categories\": \"[ObjectId] | product's categories\",\n\t    \"brand_id\": \"ObjectId | product's brand\",\n\t    \"quantity\": \"Number | number of items in stock, available for selling\",\n\t    \"price\": \"Number | retail price\",\n\t    \"thumbnail\": \"String | thumbnail image\",\n\t    \"images\": \"[String] | list of product's image\",\n\t    \"description\": \"String | product's description, can be html\",\n\t    \"variants\": \"[Mixed] | list of product's options\",\n\t    \"attributes\": \"Mixed | product option if this product is a child to another product\",\n\t    \"status_code\": \"String | product's status code\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "/products/:id",
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "7df5b7d4-6c40-48b7-a5e3-70a8e995b18e",
+							"name": "Update a product by it's id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"product\": {\n\t    \"name\": \"Handmade Soft Gloves\",\n\t    \"slug\": \"handmade-soft-gloves\",\n\t    \"parent_id\": null,\n\t    \"sell_on_pos\": true,\n\t    \"sku\": \"OZDEMPX1-123\",\n\t    \"categories\": [\n\t        \"ee50c414-671d-4258-9bf3-587c1a6cc074\"\n\t    ],\n\t    \"brand_id\": \"5abcab0f-4632-4516-aa52-fbe6592a8abf\",\n\t    \"quantity\": 20,\n\t    \"price\": 12.99,\n\t    \"thumbnail\": \"http://lorempixel.com/640/480/fashion\",\n\t    \"images\": [\n\t        \"http://lorempixel.com/640/480/fashion\",\n\t        \"http://lorempixel.com/640/480/fashion\"\n\t    ],\n\t    \"description\": \"Voluptate voluptatem autem aut fugiat.\\nQuae asperiores debitis dolorem atque id eaque rerum id.\\nVelit sed ut quas quisquam.\",\n\t    \"attributes\": null,\n\t    \"variants\": [\n\t        {\n\t            \"id\": 12,\n\t            \"size\": \"XL\",\n\t            \"Color\": \"Red\",\n\t            \"inventory\": 12,\n\t            \"sku\": \"IP7-1982-XL-RED\"\n\t        },\n\t        {\n\t            \"id\": 13,\n\t            \"size\": \"XL\",\n\t            \"color\": \"Red\",\n\t            \"inventory\": 12,\n\t            \"sku\": \"IP7-1982-XL-RED\"\n\t        }\n\t    ],\n\t    \"status_code\": \"In-stock\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "/products/194872c0-72a8-486d-a6f5-bdfae903c12e",
+									"path": [
+										"products",
+										"194872c0-72a8-486d-a6f5-bdfae903c12e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletes a product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/products/:id",
+							"path": [
+								"products",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e17af35e-dd40-4380-b1e3-9c1a5da9aa0d",
+							"name": "Delete a product by it's id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/products/194872c0-72a8-486d-a6f5-bdfae903c12e",
+									"path": [
+										"products",
+										"194872c0-72a8-486d-a6f5-bdfae903c12e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a65d474b-79b9-4a74-bae1-1b262978cab9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "1696118d-9cc5-4660-9c4d-50f384d9f078",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Brands",
+			"description": "Manages products' brands",
+			"item": [
+				{
+					"name": "Gets a list of brands",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "1",
+								"description": "Current page"
+							},
+							{
+								"key": "limit",
+								"value": "10",
+								"description": "Limit number of returned brand"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/brands",
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "d303b4f5-58f9-404b-95ce-00ba21276b5a",
+							"name": "Get list of brands",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "",
+										"description": "Current page"
+									},
+									{
+										"key": "limit",
+										"value": "",
+										"description": "Limit number of returned brand"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/brands",
+									"path": [
+										"brands"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"brands\": [\n        {\n        \t\"_id\": \"5f6821f1-7854-406f-917c-3b323dad4efb\",\n            \"name\": \"Reinger and Sons\",\n            \"description\": \"Pre-emptive content-based task-force\",\n            \"images\": [\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\"\n            ],\n            \"status_code\": \"active\",\n            \"created_at\": \"2018-07-01T15:25:14.304Z\",\n            \"updated_at\": \"2018-07-01T15:25:14.304Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Adds a new brand",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"brand\": {\n    \"name\": \"String | Name of brand\",\n      \"description\": \"String | Brand's description\",\n      \"images\": [\"String | array of images\"]\n  }\n}"
+						},
+						"url": {
+							"raw": "/brands",
+							"path": [
+								"brands"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "046aad35-9b74-4625-9e1c-c52b93dc5ea6",
+							"name": "Add new branch",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brand\":\n        {\n            \"name\": \"Reinger and Sons\",\n            \"description\": \"Pre-emptive content-based task-force\",\n            \"images\": [\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\"\n            ]\n        }\n}"
+								},
+								"url": {
+									"raw": "/brands",
+									"path": [
+										"brands"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"brand\":\n        {\n            \"_id\": \"5f6821f1-7854-406f-917c-3b323dad4efb\",\n            \"name\": \"Reinger and Sons\",\n            \"description\": \"Pre-emptive content-based task-force\",\n            \"images\": [\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\"\n            ],\n            \"status_code\": \"active\",\n            \"created_at\": \"2018-07-01T15:25:14.304Z\",\n            \"updated_at\": \"2018-07-01T15:25:14.304Z\"\n        }\n}"
+						}
+					]
+				},
+				{
+					"name": "Updates a brand",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"brand\": {\n\t\t\"name\": \"String | Name of brand\",\n\t    \"description\": \"String | Brand's description\",\n\t    \"images\": [\"String | array of images\"]\n\t}\n}"
+						},
+						"url": {
+							"raw": "/brands/:id",
+							"path": [
+								"brands",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "e4bbf826-620c-439c-8a8c-9a75b5bcf0d2",
+							"name": "Update branch by it's id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"brand\":\n        {\n            \"name\": \"Reinger and Sons\",\n            \"description\": \"Pre-emptive content-based task-force\",\n            \"images\": [\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\",\n                \"http://lorempixel.com/640/480/business\"\n            ]\n        }\n}\n"
+								},
+								"url": {
+									"raw": "/brands/5f6821f1-7854-406f-917c-3b323dad4efb",
+									"path": [
+										"brands",
+										"5f6821f1-7854-406f-917c-3b323dad4efb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletes a brand",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/brands/:id",
+							"path": [
+								"brands",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a2645c3e-99ae-4201-bdd8-8fe1432af124",
+							"name": "Delete a branch by it's id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/brands/5f6821f1-7854-406f-917c-3b323dad4efb",
+									"path": [
+										"brands",
+										"5f6821f1-7854-406f-917c-3b323dad4efb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d3fe12c9-de25-437b-97f1-1173ea4e9288",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "f3bb9d32-8c3d-4073-b899-f5efa2d33441",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"description": "Manages products's categories",
+			"item": [
+				{
+					"name": "Gets a list of categories",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "",
+								"description": "Current page"
+							},
+							{
+								"key": "limit",
+								"value": "",
+								"description": "Limit number of return categories"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/categories",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "2e7b3a86-a9ba-44a0-8dc7-13b2a582d989",
+							"name": "Get list of categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "",
+										"description": "Current page"
+									},
+									{
+										"key": "limit",
+										"value": "",
+										"description": "Limit number of return categories"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/categories",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"categories\": [\n        {\n            \"_id\": \"9f34df5b-8056-45d5-9278-40dcbbaec316\",\n            \"name\": \"Jewelery\",\n            \"description\": \"Nam voluptatem reiciendis et unde at quidem.\",\n            \"images\": [\"http://lorempixel.com/640/480/abstract\", \"http://lorempixel.com/640/480/abstract\"],\n            \"status_code\": \"active\",\n            \"created_at\": \"2018-07-01T23:21:53.208Z\",\n            \"updated_at\": \"2018-07-01T23:21:53.208Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Adds a new category",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category\": {\n\t\t\"name\": \"String | Name of category\",\n\t    \"description\": \"String | Category's description\",\n\t    \"images\": [\"String | array of images\"]\n\t}\n}"
+						},
+						"url": {
+							"raw": "/categories",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "72edaade-da84-4ef5-8659-fa17065dbc5a",
+							"name": "Add a new category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"category\": {\n\t\t\"name\": \"Jewelery\",\n        \"description\": \"Nam voluptatem reiciendis et unde at quidem.\",\n        \"images\": [\n            \"http://lorempixel.com/640/480/abstract\",\n            \"http://lorempixel.com/640/480/abstract\"\n        ]\n\t}\n}"
+								},
+								"url": {
+									"raw": "/categories",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"category\": {\n        \"_id\": \"9f34df5b-8056-45d5-9278-40dcbbaec316\",\n        \"name\": \"Jewelery\",\n        \"description\": \"Nam voluptatem reiciendis et unde at quidem.\",\n        \"images\": [\n            \"http://lorempixel.com/640/480/abstract\",\n            \"http://lorempixel.com/640/480/abstract\"\n        ],\n        \"status_code\": \"active\",\n        \"created_at\": \"2018-07-01T23:21:53.208Z\",\n        \"updated_at\": \"2018-07-01T23:21:53.208Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Updates a category",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"category\": {\n\t\t\"name\": \"String | Name of category\",\n\t    \"description\": \"String | Category's description\",\n\t    \"images\": [\"String | array of images\"]\n\t}\n}"
+						},
+						"url": {
+							"raw": "/categories/:id",
+							"path": [
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "dc9e651a-f9bd-4b2e-b600-14f91b7535dd",
+							"name": "Update a category by it's id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\":\n        {\n        \"name\": \"Jewelery\",\n        \"description\": \"Nam voluptatem reiciendis et unde at quidem.\",\n        \"images\": [\n            \"http://lorempixel.com/640/480/abstract\",\n            \"http://lorempixel.com/640/480/abstract\"\n        ]\n\t}\n}"
+								},
+								"url": {
+									"raw": "/categories/5f6821f1-7854-406f-917c-3b323dad4efb",
+									"path": [
+										"categories",
+										"5f6821f1-7854-406f-917c-3b323dad4efb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletes a category",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/categories/:id",
+							"path": [
+								"categories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "0927d16a-45da-4c28-be79-28eaaeb93d80",
+							"name": "Delete a category by it's id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/categories/5f6821f1-7854-406f-917c-3b323dad4efb",
+									"path": [
+										"categories",
+										"5f6821f1-7854-406f-917c-3b323dad4efb"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b2a5720d-5fda-4541-8982-022b682140ad",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "e10bc02c-ea19-445b-95e2-819a1f10a6b9",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"description": "Manages store's customers  ",
+			"item": [
+				{
+					"name": "Gets a list of customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "1",
+								"description": "Current page"
+							},
+							{
+								"key": "limit",
+								"value": "10",
+								"description": "Limit number of returned customers"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/customers",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "a81eac4c-52c4-45ca-a4e2-1c53aa8f2d75",
+							"name": "Get list of customers",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/customers",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"customers\": [{\n        \"_id\": \"c24f93d2-e966-465d-8c81-26bc300b9cc9\",\n        \"first_name\": \"Hello\",\n        \"last_name\": \"World\",\n        \"phone_number\": \"0978002299\",\n        \"email\": \"hello@world.com\",\n        \"gender\": \"Male\",\n        \"birthday\": \"1990/12/12\",\n        \"default_address_id\": \"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\",\n        \"address_ids\": [\n            \"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\",\n            \"5dec5709-6ecf-413b-8168-252537066bf5\"\n        ],\n        \"status_code\": \"active\",\n        \"created_at\": \"2018-07-02T03:04:16.576Z\",\n        \"updated_at\": \"2018-07-02T03:04:16.576Z\"\n    }]\n}"
+						}
+					]
+				},
+				{
+					"name": "Adds a new customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\": {\n        \"first_name\": \"String | customer's first name\",\n\t\t\"last_name\": \"String | customer's last name\",\n\t\t\"phone_number\": \"String | phone number\",\n\t\t\"email\": \"String | email address\",\n\t\t\"gender\": \"String | Male or Female\",\n\t\t\"birthday\": \"Date | date of birthday, yyyy/mm/dd\",\n\t\t\"default_address_id\": \"ObjectId | default address when ordering\",\n\t\t\"address_ids\": [\"ObjectId | array of addresses\"]\n\t}\n}"
+						},
+						"url": {
+							"raw": "/customers",
+							"path": [
+								"customers"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "b78e28a7-e6f4-4b94-bca7-dc399e19f13b",
+							"name": "Add a new customer",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customer\": {\n        \"first_name\": \"Hello\",\n\t\t\"last_name\": \"World\",\n\t\t\"phone_number\": \"0978002299\",\n\t\t\"email\": \"hello@world.com\",\n\t\t\"gender\": \"Male\",\n\t\t\"birthday\": \"1990/12/12\",\n\t\t\"default_address_id\": \"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\",\n\t\t\"address_ids\": [\"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\", \"5dec5709-6ecf-413b-8168-252537066bf5\"]\n\t}\n}"
+								},
+								"url": {
+									"raw": "/customers",
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\",\n    \"customer\": {\n    \t\"_id\": \"c24f93d2-e966-465d-8c81-26bc300b9cc9\",\n        \"first_name\": \"Hello\",\n\t\t\"last_name\": \"World\",\n\t\t\"phone_number\": \"0978002299\",\n\t\t\"email\": \"hello@world.com\",\n\t\t\"gender\": \"Male\",\n\t\t\"birthday\": \"1990/12/12\",\n\t\t\"default_address_id\": \"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\",\n\t\t\"address_ids\": [\"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\", \"5dec5709-6ecf-413b-8168-252537066bf5\"],\n\t\t\"status_code\": \"active\",\n\t\t\"created_at\": \"2018-07-02T03:04:16.576Z\",\n\t\t\"updated_at\": \"2018-07-02T03:04:16.576Z\"\n\t}\n}\n"
+						}
+					]
+				},
+				{
+					"name": "Updates a customer",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"customer\": {\n        \"first_name\": \"String | customer's first name\",\n\t\t\"last_name\": \"String | customer's last name\",\n\t\t\"phone_number\": \"String | phone number\",\n\t\t\"email\": \"String | email address\",\n\t\t\"gender\": \"String | Male or Female\",\n\t\t\"birthday\": \"Date | date of birthday, yyyy/mm/dd\",\n\t\t\"default_address_id\": \"ObjectId | default address when ordering\",\n\t\t\"address_ids\": [\"ObjectId | array of addresses\"]\n\t}\n}"
+						},
+						"url": {
+							"raw": "/customers/:id",
+							"path": [
+								"customers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "9b439961-e2a2-427b-a2a7-121cd13bae08",
+							"name": "Update a customer by it's id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"customer\": {\n        \"first_name\": \"Hello\",\n\t\t\"last_name\": \"World\",\n\t\t\"phone_number\": \"0978002299\",\n\t\t\"email\": \"hello@world.com\",\n\t\t\"gender\": \"Male\",\n\t\t\"birthday\": \"1990/12/12\",\n\t\t\"default_address_id\": \"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\",\n\t\t\"address_ids\": [\"f9f2d2b0-6e37-42ad-97e2-183e86abf19e\", \"5dec5709-6ecf-413b-8168-252537066bf5\"]\n\t}\n}"
+								},
+								"url": {
+									"raw": "/customers/c24f93d2-e966-465d-8c81-26bc300b9cc9",
+									"path": [
+										"customers",
+										"c24f93d2-e966-465d-8c81-26bc300b9cc9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletes a customer",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/customers/:id",
+							"path": [
+								"customers",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "f543ecde-74de-4f05-8a6e-bc3475331f69",
+							"name": "Delete a customer by it's id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/customers/c24f93d2-e966-465d-8c81-26bc300b9cc9",
+									"path": [
+										"customers",
+										"c24f93d2-e966-465d-8c81-26bc300b9cc9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1e6cbf9b-acf1-4c95-a0d5-fdd05de94980",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "b484f280-af75-4673-8dbb-c29819a64934",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"description": "Manages store's orders",
+			"item": [
+				{
+					"name": "Gets a list of orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "1",
+								"description": "Current page"
+							},
+							{
+								"key": "limit",
+								"value": "10",
+								"description": "Limit number of returned orders"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/orders",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "5fcf51c2-013a-48e6-9f6c-742c828364cc",
+							"name": "Get list of orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "Current page"
+									},
+									{
+										"key": "limit",
+										"value": "10",
+										"description": "Limit number of returned orders"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/orders",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"orders\": [{\n        \"_id\": \"b1d7ad50-9148-4e3c-b653-b2783e552954\",\n        \"customer_id\": \"\",\n        \"items\": [\n            {\n                \"id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n                \"name\": \"Handmade Soft Gloves\",\n                \"price\": 12.99,\n                \"sku\": \"OZDEMPX1-123\",\n                \"quantity\": 2,\n                \"attributes\": {\n                    \"id\": 12,\n                    \"size\": \"XL\",\n                    \"color\": \"Red\",\n                    \"inventory\": 12,\n                    \"sku\": \"OZDEMPX1-123-RED\"\n                }\n            }\n        ],\n        \"as_gift\": false,\n        \"tracking_number\": \"\",\n        \"shipping_id\": \"\",\n        \"payment_method\": \"Cash\",\n        \"shipping_method\": \"blank\",\n        \"note\": \"\",\n        \"status_code\": \"pending\",\n        \"created_at\": \"2018-07-02T05:54:25.674Z\",\n        \"updated_at\": \"2018-07-02T05:54:25.674Z\"\n    }]\n}"
+						}
+					]
+				},
+				{
+					"name": "Adds a new order ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"order\": {\n\t\t\"customer_id\": \"ObjectId, reference to customer_id or blank if customer is not registered\",\n\t\t\"items\": [{\n\t\t\t\"name\": \"String | product's name\", \n\t\t\t\"product_id\": \"ObjectId | reference to product's id\",\n\t\t\t\"price\": \"Number | product's retail price\",\n\t\t\t\"sku\": \"String | product's stock keeping unit\",\n\t\t\t\"quantity\": \"Number | number of product items\",\n\t\t\t\"attributes\": \"Mixed | product variants\"\n\t\t}],\n\t\t\"as_gift\": \"Boolean | true or false\",\n\t\t\"tracking_number\": \"String | shipping tracking number\",\n\t\t\"shipping_id\": \"ObjectId | shipping address id\",\n\t\t\"payment_method\": \"String | COD, Credit card, Paypal or blank\",\n\t\t\"shipping_method\": \"String | UPS, Viettel POST, or blank\",\n\t\t\"note\": \"String | customer note or blank\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "/orders",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "17ae3643-3786-465e-9155-1a5a3196528d",
+							"name": "Add a new order ",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"order\": {\n\t\t\"customer_id\": \"\",\n\t\t\"items\": [{\n\t\t\t\"id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n\t\t\t\"name\": \"Handmade Soft Gloves\",\n\t\t\t\"price\": 12.99,\n\t\t\t\"sku\": \"OZDEMPX1-123\",\n\t\t\t\"quantity\": 2,\n\t\t\t\"attributes\": {\n\t\t\t\t\"id\": 12,\n                \"size\": \"XL\",\n                \"color\": \"Red\",\n                \"inventory\": 12,\n                \"sku\": \"OZDEMPX1-123-RED\"\n\t\t\t}\n\t\t}],\n\t\t\"as_gift\": false,\n\t\t\"tracking_number\": \"\",\n\t\t\"shipping_id\": \"\",\n\t\t\"payment_method\": \"Cash\",\n\t\t\"shipping_method\": \"blank\",\n\t\t\"note\": \"\",\n\t\t\"status_code\": \"completed\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "/orders",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"order\": {\n    \t\"_id\": \"b1d7ad50-9148-4e3c-b653-b2783e552954\",\n        \"customer_id\": \"\",\n        \"items\": [\n            {\n                \"id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n                \"name\": \"Handmade Soft Gloves\",\n                \"price\": 12.99,\n                \"sku\": \"OZDEMPX1-123\",\n                \"quantity\": 2,\n                \"attributes\": {\n                    \"id\": 12,\n                    \"size\": \"XL\",\n                    \"color\": \"Red\",\n                    \"inventory\": 12,\n                    \"sku\": \"OZDEMPX1-123-RED\"\n                }\n            }\n        ],\n        \"as_gift\": false,\n        \"tracking_number\": \"\",\n        \"shipping_id\": \"\",\n        \"payment_method\": \"Cash\",\n        \"shipping_method\": \"blank\",\n        \"note\": \"\",\n        \"status_code\": \"pending\",\n        \"created_at\": \"2018-07-02T05:54:25.674Z\",\n        \"updated_at\": \"2018-07-02T05:54:25.674Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Updates an order",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"order\": {\n\t\t\"customer_id\": \"ObjectId, reference to customer_id or blank if customer is not registered\",\n\t\t\"items\": [{\n\t\t\t\"name\": \"String | product's name\", \n\t\t\t\"product_id\": \"ObjectId | reference to product's id\",\n\t\t\t\"price\": \"Number | product's retail price\",\n\t\t\t\"sku\": \"String | product's stock keeping unit\",\n\t\t\t\"quantity\": \"Number | number of product items\",\n\t\t\t\"attributes\": \"Mixed | product variants\"\n\t\t}],\n\t\t\"as_gift\": \"Boolean | true or false\",\n\t\t\"tracking_number\": \"String | shipping tracking number\",\n\t\t\"shipping_id\": \"ObjectId | shipping address id\",\n\t\t\"payment_method\": \"String | COD, Credit card, Paypal or blank\",\n\t\t\"shipping_method\": \"String | UPS, Viettel POST, or blank\",\n\t\t\"note\": \"String | customer note or blank\",\n\t\t\"status_code\": \"String | order's status\"\n\t}\n}"
+						},
+						"url": {
+							"raw": "/orders/:id",
+							"path": [
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "1314c508-e384-409c-8752-7e4deb28554c",
+							"name": "Update an order by it's id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"order\": {\n\t\t\"customer_id\": \"\",\n\t\t\"items\": [{\n\t\t\t\"id\": \"194872c0-72a8-486d-a6f5-bdfae903c12e\",\n\t\t\t\"name\": \"Handmade Soft Gloves\",\n\t\t\t\"price\": 12.99,\n\t\t\t\"sku\": \"OZDEMPX1-123\",\n\t\t\t\"quantity\": 2,\n\t\t\t\"attributes\": {\n\t\t\t\t\"id\": 12,\n                \"size\": \"XL\",\n                \"color\": \"Red\",\n                \"inventory\": 12,\n                \"sku\": \"OZDEMPX1-123-RED\"\n\t\t\t}\n\t\t}],\n\t\t\"as_gift\": false,\n\t\t\"tracking_number\": \"\",\n\t\t\"shipping_id\": \"\",\n\t\t\"payment_method\": \"Cash\",\n\t\t\"shipping_method\": \"blank\",\n\t\t\"note\": \"\",\n\t\t\"status_code\": \"completed\"\n\t}\n}"
+								},
+								"url": {
+									"raw": "/orders/b1d7ad50-9148-4e3c-b653-b2783e552954",
+									"path": [
+										"orders",
+										"b1d7ad50-9148-4e3c-b653-b2783e552954"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Deletes an order",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/orders/:id",
+							"path": [
+								"orders",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "6327721d-ace8-41be-94ae-f454e03753d7",
+							"name": "Delete a order by it's id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/orders/b1d7ad50-9148-4e3c-b653-b2783e552954",
+									"path": [
+										"orders",
+										"b1d7ad50-9148-4e3c-b653-b2783e552954"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d86ebcbe-1430-4f1d-ad1c-f2e40ba375e2",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "d2781b15-7e6d-448f-bc7f-77e19a26fb7b",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Settings",
+			"description": "Manage store's settings.",
+			"item": [
+				{
+					"name": "Gets settings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "/settings",
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "61026192-bbc8-4e62-8fcf-8fdd29113a05",
+							"name": "Get settings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "/settings",
+									"path": [
+										"settings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"status\": \"success\",\n    \"settings\": [\n        {\n            \"scope\": \"shop\",\n            \"key\": \"url\",\n            \"value\": \"awesome-shop\"\n        },\n        {\n            \"scope\": \"user\",\n            \"key\": \"name\",\n            \"value\": \"im awesome\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Update settings",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"settings\": [\n\t\t{\n\t\t\t\"scope\": \"String | A group of related configs, top level\",\n\t\t\t\"key\": \"String\",\n\t\t\t\"value\": \"String\"\n\t\t}\n\t]\n}"
+						},
+						"url": {
+							"raw": "/settings",
+							"path": [
+								"settings"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "86177157-c76f-41d8-91d5-de3ce935f759",
+							"name": "Save settings",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"settings\": [\n\t\t{\n\t\t\t\"scope\": \"shop\",\n\t\t\t\"key\": \"url\",\n\t\t\t\"value\": \"an-awesome-shop\"\n\t\t}\n\t]\n}"
+								},
+								"url": {
+									"raw": "/settings",
+									"path": [
+										"settings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n\t\"status\": \"success\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "d94b33cb-01ef-4556-bf27-e70dcad54ab8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "390fb83a-09f7-4023-a3ea-d163a41d5847",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
