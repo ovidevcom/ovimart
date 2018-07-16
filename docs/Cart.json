@@ -31,11 +31,22 @@
 					},
 					"response": [
 						{
-							"id": "00264dfd-40ed-4ca5-b448-f51e50ca279d",
+							"id": "47552684-7fb2-4011-b483-5a08e414f463",
 							"name": "/carts",
 							"originalRequest": {
 								"method": "GET",
-								"header": [],
+								"header": [
+									{
+										"key": "page",
+										"value": "1",
+										"description": "Current page"
+									},
+									{
+										"key": "limit",
+										"value": "10",
+										"description": "Limit number of returned carts"
+									}
+								],
 								"body": {},
 								"url": {
 									"raw": "http://localhost:3000/carts",
@@ -54,12 +65,12 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"GET_ALL_CARTS_DETAIL\",\n    \"total\": 1,\n    \"carts\": [\n        {\n            \"_id\": \"312314234534521231\",\n            \"owner\": {\n                \"owner_id\": \"123124235213124235\",\n                \"owner_name\": \"ABC\",\n                \"owner_email\": \"user@email.com\"\n            },\n            \"modified_date\": [\n                \"2018-07-13T07:02:36+00:00\",\n                \"2018-07-14T07:02:10+00:00\"\n            ],\n            \"total_price\": 1800,\n            \"status\": \"PENDING\",\n            \"products\": [\n                {\n                    \"product_id\": \"312314234534521231\",\n                    \"product_url\": \"LINK_HERE\",\n                    \"product_name\": \"Product 1\",\n                    \"brand\": \"Brand 1\",\n                    \"quantity\": 2,\n                    \"retail_price\": 1000,\n                    \"discount_price\": 900,\n                    \"price\": 900,\n                    \"currency\": \"USD\",\n                    \"subtotal\": 1800,\n                    \"category\": \"CATEGORY\",\n                    \"tag\": [\n                        \"tag_1\",\n                        \"tag_2\",\n                        \"tag_3\"\n                    ],\n                    \"images\": [\n                        \"PRODUCT_IMAGE_1\",\n                        \"PRODUCT_IMAGE_2\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+							"body": "{\n    \n    \"description\": \"GET_ALL_CARTS_DETAIL\",\n    \"status\": \"sucess\",\n    \"total\": 1,\n    \"carts\": [\n        {\n            \"_id\": \"312314234534521231\",\n            \"owner\": {\n                \"owner_id\": \"123124235213124235\",\n                \"owner_name\": \"ABC\",\n                \"owner_email\": \"user@email.com\"\n            },\n            \"modified_date\": [\n                \"2018-07-13T07:02:36+00:00\",\n                \"2018-07-14T07:02:10+00:00\"\n            ],\n            \"total_price\": 1800,\n            \"status\": \"PENDING\",\n            \"products\": [\n                {\n                    \"product_id\": \"312314234534521231\",\n                    \"product_url\": \"LINK_HERE\",\n                    \"product_name\": \"Product 1\",\n                    \"brand\": \"Brand 1\",\n                    \"quantity\": 2,\n                    \"retail_price\": 1000,\n                    \"discount_price\": 900,\n                    \"price\": 900,\n                    \"currency\": \"USD\",\n                    \"subtotal\": 1800,\n                    \"category\": \"CATEGORY\",\n                    \"tag\": [\n                        \"tag_1\",\n                        \"tag_2\",\n                        \"tag_3\"\n                    ],\n                    \"images\": [\n                        \"PRODUCT_IMAGE_1\",\n                        \"PRODUCT_IMAGE_2\"\n                    ]\n                }\n            ]\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "/carts/#{cart_id}",
+					"name": "/carts/:cart_id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -75,11 +86,11 @@
 								"carts"
 							]
 						},
-						"description": "Retrieves the specific cart base on the cartId"
+						"description": "Retrieves the specific cart base on the cart_id"
 					},
 					"response": [
 						{
-							"id": "58374566-0d56-4102-94d7-7da4f08e7086",
+							"id": "c8f826ad-56e8-4dac-a3db-e57849e70887",
 							"name": "/carts/312314234534521231",
 							"originalRequest": {
 								"method": "GET",
@@ -104,12 +115,12 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"GET_CART_DETAIL\",\n    \"cart\": {\n        \"_id\": \"312314234534521231\",\n        \"owner\": {\n            \"owner_id\": \"123124235213124235\",\n            \"owner_name\": \"ABC\",\n            \"owner_email\": \"user@email.com\"\n        },\n        \"modified_date\": [\n            \"2018-07-13T07:02:36+00:00\",\n            \"2018-07-14T07:02:10+00:00\"\n        ],\n        \"total_price\": 1800,\n        \"status\": \"PENDING\",\n        \"products\": [\n            {\n                \"product_id\": \"312314234534521231\",\n                \"product_url\": \"LINK_HERE\",\n                \"product_name\": \"Product 1\",\n                \"brand\": \"Brand 1\",\n                \"quantity\": 2,\n                \"retail_price\": 1000,\n                \"discount_price\": 900,\n                \"price\": 900,\n                \"currency\": \"USD\",\n                \"subtotal\": 1800,\n                \"category\": \"CATEGORY\",\n                \"tag\": [\n                    \"tag_1\",\n                    \"tag_2\",\n                    \"tag_3\"\n                ],\n                \"images\": [\n                    \"PRODUCT_IMAGE_1\",\n                    \"PRODUCT_IMAGE_2\"\n                ]\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"description\": \"GET_CART_DETAIL\",\n    \"status\": \"sucess\",\n    \"cart\": {\n        \"_id\": \"312314234534521231\",\n        \"owner\": {\n            \"owner_id\": \"123124235213124235\",\n            \"owner_name\": \"ABC\",\n            \"owner_email\": \"user@email.com\"\n        },\n        \"modified_date\": [\n            \"2018-07-13T07:02:36+00:00\",\n            \"2018-07-14T07:02:10+00:00\"\n        ],\n        \"total_price\": 1800,\n        \"status\": \"PENDING\",\n        \"products\": [\n            {\n                \"product_id\": \"312314234534521231\",\n                \"product_url\": \"LINK_HERE\",\n                \"product_name\": \"Product 1\",\n                \"brand\": \"Brand 1\",\n                \"quantity\": 2,\n                \"retail_price\": 1000,\n                \"discount_price\": 900,\n                \"price\": 900,\n                \"currency\": \"USD\",\n                \"subtotal\": 1800,\n                \"category\": \"CATEGORY\",\n                \"tag\": [\n                    \"tag_1\",\n                    \"tag_2\",\n                    \"tag_3\"\n                ],\n                \"images\": [\n                    \"PRODUCT_IMAGE_1\",\n                    \"PRODUCT_IMAGE_2\"\n                ]\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
 				{
-					"name": "/carts/#{cart_id}",
+					"name": "/carts/:cart_id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -129,7 +140,7 @@
 					},
 					"response": [
 						{
-							"id": "a1f52b6f-3255-4255-8af7-fce48f658ef1",
+							"id": "0cfd5531-5e0b-4d4e-a592-e6e4c0ea7682",
 							"name": "/carts",
 							"originalRequest": {
 								"method": "DELETE",
@@ -154,12 +165,12 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"DELETE_CART\",\n    \"message\": \"Cart deleted\",\n    \"helps\": [\n        {\n            \"description\": \"CREATE_CART\",\n            \"type\": \"POST\",\n            \"url\": \"http://localhost:3000/carts\",\n            \"body\": {\n                \"_id\": \"String\",\n                \"owner\": \"Object\",\n                \"modified_date\": \"Array of Date\",\n                \"total_price\": \"Number\",\n                \"status\": \"String\",\n                \"products\": \"String\"\n            }\n        }\n    ]\n}"
+							"body": "{\n    \"description\": \"DELETE_CART\",\n    \"status\": \"sucess\",\n    \"helps\": [\n        {\n            \"description\": \"CREATE_CART\",\n            \"type\": \"POST\",\n            \"url\": \"http://localhost:3000/carts\",\n            \"body\": {\n                \"_id\": \"String\",\n                \"owner\": \"Object\",\n                \"modified_date\": \"Array of Date\",\n                \"total_price\": \"Number\",\n                \"status\": \"String\",\n                \"products\": \"String\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "/carts/#{cart_id}",
+					"name": "/carts/:cart_id",
 					"request": {
 						"method": "PATCH",
 						"header": [],
@@ -179,12 +190,21 @@
 					},
 					"response": [
 						{
-							"id": "4a082b3a-ec3d-4488-9f21-05dc05a1bb94",
+							"id": "9c2b3080-5ebe-4c58-9274-ab96a0b00042",
 							"name": "/carts",
 							"originalRequest": {
 								"method": "PATCH",
-								"header": [],
-								"body": {},
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"modified_date\": [\n        \"2018-07-13T07:02:36+00:00\",\n        \"2018-07-14T07:02:10+00:00\",\n        \"2018-07-15T07:02:10+00:00\"\n    ]\n}"
+								},
 								"url": {
 									"raw": "https://www.domain.com/carts/312314234534521231",
 									"protocol": "https",
@@ -204,12 +224,71 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"message\": \"Product updated\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"status\": \"sucess\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
 						}
 					]
 				},
 				{
-					"name": "/carts/user/#{user_id}",
+					"name": "/carts/:cart_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "MODIFY the specific cart base on the CART_ID"
+					},
+					"response": [
+						{
+							"id": "010c6070-abf9-4903-8890-8085f1efb8aa",
+							"name": "/carts/312314234534521231",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"_id\": \"312314234534521231\",\n    \"owner\": {\n        \"owner_id\": \"123124235213124235\",\n        \"owner_name\": \"ABC\",\n        \"owner_email\": \"user@email.com\"\n    },\n    \"modified_date\": [\n        \"2018-07-13T07:02:36+00:00\",\n        \"2018-07-14T07:02:10+00:00\",\n        \"2018-07-15T07:02:10+00:00\"\n    ],\n    \"total_price\": 1800,\n    \"status\": \"PENDING\",\n    \"products\": [\n        {\n            \"product_id\": \"312314234534521231\",\n            \"product_url\": \"LINK_HERE\",\n            \"product_name\": \"Product 1\",\n            \"brand\": \"Brand 1\",\n            \"quantity\": 2,\n            \"retail_price\": 1000,\n            \"discount_price\": 900,\n            \"price\": 900,\n            \"currency\": \"USD\",\n            \"subtotal\": 1800,\n            \"category\": \"CATEGORY\",\n            \"tag\": [\n                \"tag_1\",\n                \"tag_2\",\n                \"tag_3\"\n            ],\n            \"images\": [\n                \"PRODUCT_IMAGE_1\",\n                \"PRODUCT_IMAGE_2\"\n            ]\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://www.domain.com/carts/312314234534521231",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts",
+										"312314234534521231"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"status\": \"sucess\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/user/:user_id",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -229,7 +308,7 @@
 					},
 					"response": [
 						{
-							"id": "b431551b-e225-4ed0-8fbd-523c88f50ba1",
+							"id": "d45eb7a3-9802-45ac-b4f5-8fac5ae723b4",
 							"name": "/carts/user/123124235213124235",
 							"originalRequest": {
 								"method": "GET",
@@ -255,12 +334,12 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"GET_CART_DETAIL\",\n    \"cart\": {\n        \"_id\": \"312314234534521231\",\n        \"owner\": {\n            \"owner_id\": \"123124235213124235\",\n            \"owner_name\": \"ABC\",\n            \"owner_email\": \"user@email.com\"\n        },\n        \"modified_date\": [\n            \"2018-07-13T07:02:36+00:00\",\n            \"2018-07-14T07:02:10+00:00\"\n        ],\n        \"total_price\": 2000,\n        \"status\": \"PENDING\",\n        \"products\": [\n            {\n                \"product_id\": \"312314234534521231\",\n                \"product_url\": \"LINK_HERE\",\n                \"product_name\": \"Product 1\",\n                \"brand\": \"Brand 1\",\n                \"quantity\": 2,\n                \"retail_price\": 1000,\n                \"discount_price\": 900,\n                \"price\": 900,\n                \"currency\": \"USD\",\n                \"subtotal\": 1800,\n                \"category\": \"CATEGORY\",\n                \"tag\": [\n                    \"tag_1\",\n                    \"tag_2\",\n                    \"tag_3\"\n                ],\n                \"images\": [\n                    \"PRODUCT_IMAGE_1\",\n                    \"PRODUCT_IMAGE_2\"\n                ]\n            }\n        ]\n    }\n}"
+							"body": "{\n    \"description\": \"GET_CART_DETAIL\",\n    \"status\": \"sucess\",\n    \"cart\": {\n        \"_id\": \"312314234534521231\",\n        \"owner\": {\n            \"owner_id\": \"123124235213124235\",\n            \"owner_name\": \"ABC\",\n            \"owner_email\": \"user@email.com\"\n        },\n        \"modified_date\": [\n            \"2018-07-13T07:02:36+00:00\",\n            \"2018-07-14T07:02:10+00:00\"\n        ],\n        \"total_price\": 1800,\n        \"status\": \"PENDING\",\n        \"products\": [\n            {\n                \"product_id\": \"312314234534521231\",\n                \"product_url\": \"LINK_HERE\",\n                \"product_name\": \"Product 1\",\n                \"brand\": \"Brand 1\",\n                \"quantity\": 2,\n                \"retail_price\": 1000,\n                \"discount_price\": 900,\n                \"price\": 900,\n                \"currency\": \"USD\",\n                \"subtotal\": 1800,\n                \"category\": \"CATEGORY\",\n                \"tag\": [\n                    \"tag_1\",\n                    \"tag_2\",\n                    \"tag_3\"\n                ],\n                \"images\": [\n                    \"PRODUCT_IMAGE_1\",\n                    \"PRODUCT_IMAGE_2\"\n                ]\n            }\n        ]\n    }\n}"
 						}
 					]
 				},
 				{
-					"name": "/carts/user/#{user_id}",
+					"name": "/carts/user/:user_id",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -280,14 +359,14 @@
 					},
 					"response": [
 						{
-							"id": "d33f9c82-13a0-4d2d-9fe9-63d90f819f90",
-							"name": "/carts",
+							"id": "e173ae41-3109-4c86-9fed-e935a2a8ed88",
+							"name": "/carts/user/123124235213124235",
 							"originalRequest": {
 								"method": "GET",
 								"header": [],
 								"body": {},
 								"url": {
-									"raw": "https://www.domain.com/carts",
+									"raw": "https://www.domain.com/carts/user/123124235213124235",
 									"protocol": "https",
 									"host": [
 										"www",
@@ -295,7 +374,9 @@
 										"com"
 									],
 									"path": [
-										"carts"
+										"carts",
+										"user",
+										"123124235213124235"
 									]
 								}
 							},
@@ -304,7 +385,7 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"DELETE_CART\",\n    \"message\": \"Cart deleted\",\n    \"helps\": [\n        {\n            \"description\": \"CREATE_CART\",\n            \"type\": \"POST\",\n            \"url\": \"http://localhost:3000/carts\",\n            \"body\": {\n                \"_id\": \"String\",\n                \"owner\": \"Object\",\n                \"modified_date\": \"Array of Date\",\n                \"total_price\": \"Number\",\n                \"status\": \"String\",\n                \"products\": \"String\"\n            }\n        }\n    ]\n}"
+							"body": "{\n    \"description\": \"DELETE_CART\",\n    \"status\": \"sucess\",\n    \"helps\": [\n        {\n            \"description\": \"CREATE_CART\",\n            \"type\": \"POST\",\n            \"url\": \"http://localhost:3000/carts\",\n            \"body\": {\n                \"_id\": \"String\",\n                \"owner\": \"Object\",\n                \"modified_date\": \"Array of Date\",\n                \"total_price\": \"Number\",\n                \"status\": \"String\",\n                \"products\": \"String\"\n            }\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -329,14 +410,23 @@
 					},
 					"response": [
 						{
-							"id": "837e896d-fa0f-4f05-8017-5b52991d93e5",
-							"name": "/carts",
+							"id": "c52d143f-b3eb-4b45-bc8f-77ac54d010de",
+							"name": "/carts/123124235213124235",
 							"originalRequest": {
-								"method": "GET",
-								"header": [],
-								"body": {},
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"modified_date\": [\n        \"2018-07-13T07:02:36+00:00\",\n        \"2018-07-14T07:02:10+00:00\",\n        \"2018-07-15T07:02:10+00:00\"\n    ]\n}"
+								},
 								"url": {
-									"raw": "https://www.domain.com/carts",
+									"raw": "https://www.domain.com/carts/user/123124235213124235",
 									"protocol": "https",
 									"host": [
 										"www",
@@ -344,7 +434,9 @@
 										"com"
 									],
 									"path": [
-										"carts"
+										"carts",
+										"user",
+										"123124235213124235"
 									]
 								}
 							},
@@ -353,7 +445,67 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"message\": \"Product updated\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"status\": \"sucess\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "/carts/user/:user_id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:3000/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"carts"
+							]
+						},
+						"description": "MODIFY the specific cart base on the USER_ID"
+					},
+					"response": [
+						{
+							"id": "f2de9780-1d39-4164-b52d-82d133d8ac9e",
+							"name": "/carts/312314234534521231",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"_id\": \"312314234534521231\",\n    \"owner\": {\n        \"owner_id\": \"123124235213124235\",\n        \"owner_name\": \"ABC\",\n        \"owner_email\": \"user@email.com\"\n    },\n    \"modified_date\": [\n        \"2018-07-13T07:02:36+00:00\",\n        \"2018-07-14T07:02:10+00:00\",\n        \"2018-07-15T07:02:10+00:00\"\n    ],\n    \"total_price\": 1800,\n    \"status\": \"PENDING\",\n    \"products\": [\n        {\n            \"product_id\": \"312314234534521231\",\n            \"product_url\": \"LINK_HERE\",\n            \"product_name\": \"Product 1\",\n            \"brand\": \"Brand 1\",\n            \"quantity\": 2,\n            \"retail_price\": 1000,\n            \"discount_price\": 900,\n            \"price\": 900,\n            \"currency\": \"USD\",\n            \"subtotal\": 1800,\n            \"category\": \"CATEGORY\",\n            \"tag\": [\n                \"tag_1\",\n                \"tag_2\",\n                \"tag_3\"\n            ],\n            \"images\": [\n                \"PRODUCT_IMAGE_1\",\n                \"PRODUCT_IMAGE_2\"\n            ]\n        }\n    ]\n}"
+								},
+								"url": {
+									"raw": "https://www.domain.com/carts/user/123124235213124235",
+									"protocol": "https",
+									"host": [
+										"www",
+										"domain",
+										"com"
+									],
+									"path": [
+										"carts",
+										"user",
+										"123124235213124235"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n    \"description\": \"UPDATE_CART\",\n    \"status\": \"sucess\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
 						}
 					]
 				},
@@ -378,7 +530,7 @@
 					},
 					"response": [
 						{
-							"id": "9cbe5fb3-bec5-46c3-b7f2-6ec7b3779d11",
+							"id": "f20dd272-af37-41b7-beee-d98baa6cb51b",
 							"name": "/carts",
 							"originalRequest": {
 								"method": "POST",
@@ -412,7 +564,7 @@
 							"_postman_previewlanguage": "json",
 							"header": [],
 							"cookie": [],
-							"body": "{\n    \"description\": \"ADD_NEW_CART\",\n    \"message\": \"Adding new cart successfully\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_ALL_CART\",\n            \"url\": \"http://localhost:3000/carts\"\n        },\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
+							"body": "{\n    \"description\": \"ADD_NEW_CART\",\n    \"status\": \"success\",\n    \"help\": [\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_ALL_CART\",\n            \"url\": \"http://localhost:3000/carts\"\n        },\n        {\n            \"type\": \"GET\",\n            \"description\": \"GET_CART_DETAIL\",\n            \"url\": \"http://localhost:3000/carts/cart_id\"\n        }\n    ]\n}"
 						}
 					]
 				}
