@@ -1,0 +1,385 @@
+{
+	"info": {
+		"_postman_id": "5a51034c-4027-43be-b23d-cf8a48232477",
+		"name": "ovidev First Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "/api/customers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "page",
+						"value": "1",
+						"description": "page number."
+					},
+					{
+						"key": "limit",
+						"value": "100",
+						"description": "limit of number of product in a page."
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "/api/customers",
+					"path": [
+						"api",
+						"customers"
+					]
+				},
+				"description": "get all customers"
+			},
+			"response": [
+				{
+					"id": "a05a4fea-51f2-4217-8f72-8f8ae679b4a9",
+					"name": "/api/customers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "page",
+								"value": "1",
+								"description": "page number."
+							},
+							{
+								"key": "limit",
+								"value": "3",
+								"description": "limit of number of product in a page."
+							},
+							{
+								"key": "orderby",
+								"value": "dateofbirth"
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "/api/customers",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": \"12326586-12356846\",\n        \"username\":\"evanyuth89\",\n\t\t\"password\":\"12345678\",\n        \"firstname\": \"Evan\",\n        \"lastname\": \"Yuth\",\n        \"sex\": \"male\",\n        \"email\": \"abc@gmail.com\",\n        \"dateofbirth\": \"1989-07-30\",\n        \"phone\": \"0833535546\",\n        \"adress\": [\n            \"105, District 9, HCMC\",\n            \"10, District 10, HCMC\"\n        ]\n    },\n    {\n        \"id\": \"12474786-12356846\",\n        \"username\":\"paulyuth89\",\n\t\t\"password\":\"12345678\",\n        \"firstname\": \"Paul\",\n        \"lastname\": \"Yuth\",\n        \"sex\": \"male\",\n        \"email\": \"abc@gmail.com\",\n        \"dateofbirth\": \"1989-08-30\",\n        \"phone\": \"08333235546\",\n        \"adress\": [\n            \"106, District 9, HCMC\",\n            \"10, District 10, HCMC\"\n        ]\n    },\n    {\n        \"id\": \"12327476-12356846\",\n        \"username\":\"ev_richard\",\n\t\t\"password\":\"12345678\",\n        \"firstname\": \"Evan\",\n        \"lastname\": \"Richardson\",\n        \"sex\": \"male\",\n        \"email\": \"abc@gmail.com\",\n        \"dateofbirth\": \"1989-09-30\",\n        \"phone\": \"08335332246\",\n        \"adress\": [\n            \"107, District 9, HCMC\",\n            \"10, District 10, HCMC\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "api/customers/:id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "/api/customers/:id",
+					"path": [
+						"api",
+						"customers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "6d9c4af9-0e93-4b3b-9f66-8d444cca1b1b",
+					"name": "api/customers/:id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "api/customers/12326586-12356846",
+							"host": [
+								"api"
+							],
+							"path": [
+								"customers",
+								"12326586-12356846"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n    \"id\": \"12326586-12356846\",\n    \"username\": \"evanyuth89\",\n    \"firstname\": \"Evan\",\n    \"lastname\": \"Yuth\",\n    \"sex\": \"male\",\n    \"email\": \"abc@gmail.com\",\n    \"dateofbirth\": \"1989-07-30\",\n    \"phone\": \"0833535546\",\n    \"adress\": [\n        \"105, District 9, HCMC\",\n        \"10, District 10, HCMC\"\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/customers",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"evanyuth89\",\n\t\"password\":\"12345678\",\n\t\"firstname\": \"Evan\",\n    \"lastname\": \"Yuth\",\n    \"sex\":\"male\",\n    \"email\":\"abc@gmail.com\",\n    \"dateofbirth\": \"1989-07-30\"\n}"
+				},
+				"url": {
+					"raw": "/api/customers",
+					"path": [
+						"api",
+						"customers"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "1f73689d-2582-46aa-95c0-7a8027de2e35",
+					"name": "/api/customers",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"evanyuth89\",\n\t\"password\":\"12345678\",\n\t\"firstname\": \"Evan\",\n    \"lastname\": \"Yuth\",\n    \"sex\":\"male\",\n    \"email\":\"abc@gmail.com\",\n    \"dateofbirth\": \"1989-07-30\"\n}"
+						},
+						"url": {
+							"raw": "/api/customers",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n\t\"username\":\"evanyuth89\",\n    \"firstname\": \"Evan\",\n    \"lastname\": \"Yuth\",\n    \"sex\": \"male\",\n    \"email\": \"abc@gmail.com\",\n    \"dateofbirth\": \"1989-07-30\"\n}"
+				}
+			]
+		},
+		{
+			"name": "api/customers/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "/api/customers/:id",
+					"path": [
+						"api",
+						"customers",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "66eec906-1d4a-489b-9af1-f06ff531dcdf",
+					"name": "api/customers/:id",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "api/customers/12326586-12356846",
+							"host": [
+								"api"
+							],
+							"path": [
+								"customers",
+								"12326586-12356846"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "/api/sessions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"evanyuth89\",\n\t\"password\":\"12326586-12356846\"\n}"
+				},
+				"url": {
+					"raw": "/api/sessions",
+					"path": [
+						"api",
+						"sessions"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "52908cf4-744d-4f7c-ae4b-4d475ed54b25",
+					"name": "/api/sessions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"evanyuth89notfound\",\n\t\"password\":\"12326586-12356846\"\n}"
+						},
+						"url": {
+							"raw": "/api/sessions",
+							"path": [
+								"api",
+								"sessions"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n\t\"message\":\"User evanyuth89notfound was not found\"\n}"
+				},
+				{
+					"id": "8b4c0373-9754-4ed3-9c56-88e1b4fec01f",
+					"name": "/api/sessions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"evanyuth89\",\n\t\"password\":\"12326586-12356846\"\n}"
+						},
+						"url": {
+							"raw": "/api/sessions",
+							"path": [
+								"api",
+								"sessions"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n\"token\": \"761b69db-ace4-49cd-84cb-4550be231e8f\"\n}"
+				},
+				{
+					"id": "0cb59bc7-ec97-4a35-b733-9cd937e603a6",
+					"name": "/api/sessions",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"evanyuth89\",\n\t\"password\":\"1232wrong\"\n}"
+						},
+						"url": {
+							"raw": "/api/sessions",
+							"path": [
+								"api",
+								"sessions"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [],
+					"cookie": [],
+					"body": "{\n\t\"message\":\"Authentication Failure\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/api/sessions/761b69db-ace4-49cd-84cb-4550be231e8f",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "/api/sessions/761b69db-ace4-49cd-84cb-4550be231e8f",
+					"path": [
+						"api",
+						"sessions",
+						"761b69db-ace4-49cd-84cb-4550be231e8f"
+					]
+				}
+			},
+			"response": [
+				{
+					"id": "9f17fa3b-d942-46f7-aa25-efed545519e3",
+					"name": "/api/sessions/761b69db-ace4-49cd-84cb-4550be231e8f",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "/api/sessions/761b69db-ace4-49cd-84cb-4550be231e8f",
+							"path": [
+								"api",
+								"sessions",
+								"761b69db-ace4-49cd-84cb-4550be231e8f"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	]
+}
