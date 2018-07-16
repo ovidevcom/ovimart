@@ -1,0 +1,475 @@
+{
+	"id": "b0d251ad-b911-4377-8a1e-9117425f0ce0",
+	"name": "Product",
+	"description": "",
+	"auth": null,
+	"events": null,
+	"variables": [],
+	"order": [
+		"fc5be7f7-89d9-499d-92cd-cb0a9dcd2649",
+		"99273650-5a79-441c-ada6-3ff3aa5a7d2d",
+		"69df038b-9aea-4b91-afdc-372ce5fe9550",
+		"5f205d8c-12ec-47c4-9824-bf4241d89417"
+	],
+	"folders_order": [],
+	"folders": [],
+	"requests": [
+		{
+			"id": "5f205d8c-12ec-47c4-9824-bf4241d89417",
+			"name": "editProduct",
+			"url": "admin/product/editProduct/:id/:token",
+			"description": "",
+			"data": [],
+			"dataMode": "raw",
+			"headerData": [],
+			"method": "PATCH",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": ""
+				},
+				{
+					"key": "token",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"responses": [
+				{
+					"id": "1829e95c-b22b-4cb0-87e4-612093f3d391",
+					"name": "editProduct",
+					"status": "",
+					"mime": "",
+					"language": "",
+					"text": "{\n\t\"success\" : true,\n\t\"id\": 21312321\n}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "admin/product/editProduct/:id/:token",
+						"pathVariableData": [
+							{
+								"key": "id",
+								"value": ""
+							},
+							{
+								"key": "token",
+								"value": ""
+							}
+						],
+						"queryParams": [],
+						"headerData": [],
+						"data": "\t{  \r\n\t  \"pricing\":{  \r\n\t    \"price\":5.9\r\n\t  }\r\n\t}",
+						"method": "PATCH",
+						"dataMode": "raw"
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "5f205d8c-12ec-47c4-9824-bf4241d89417",
+					"collection": "b0d251ad-b911-4377-8a1e-9117425f0ce0"
+				}
+			],
+			"rawModeData": "\t{  \r\n\t  \"pricing\":{  \r\n\t    \"price\":5.9,\r\n\t    \"discounts\":{  \r\n\t      \"promo\":{  \r\n\t        \"promo_price\":2.95,\r\n\t        \"savings\":50.0,\r\n\t        \"savings_amount\":2.95,\r\n\t        \"savings_type\":1,\r\n\t        \"savings_text\":\"HALF PRICE\"\r\n\t      },\r\n\t      \"live_up\":{  \r\n\t        \"promo_price\":2.36,\r\n\t        \"savings\":60.0,\r\n\t        \"savings_amount\":3.54,\r\n\t        \"savings_type\":1,\r\n\t        \"savings_text\":\"60% OFF\"\r\n\t      }\r\n\t    }\r\n\t  },\r\n\t  \"amount\":5,\r\n\t  \"id\":125559,\r\n\t  \"name\":\"gi do\",\r\n\t  \"title\":\"Birds Eye Steamfresh Lightly Seasoned Asian Style Rice With Carrots Peas Edamame and Onion - Frozen\",\r\n\t  \"desc\":\"With Birds Eye Steamfresh Chef’s Favorites, you can enjoy lightly seasoned Asian Style rice with carrots, peas, edamame and onions. Contains no artificial preservatives, flavors or colors. Good source of Vitamin A. Perfectly cooks in the bag & ready in minutes.\",\r\n\r\n\t  \"images\":[  \r\n\t    {  \r\n\t      \"h\":0,\r\n\t      \"w\":0,\r\n\t      \"name\":\"/i/m/014500025166_0089_1504062571503.jpg\",\r\n\t      \"position\":0\r\n\t    },\r\n\t    {  \r\n\t      \"h\":0,\r\n\t      \"w\":0,\r\n\t      \"name\":\"/i/m/014500025166_0090_1504062574981.jpg\",\r\n\t      \"position\":1\r\n\t    }\r\n\t  ],\r\n\t  \"categories\":[  \r\n\t    249,\r\n\t    250,\r\n\t    8957,\r\n\t    10490,\r\n\t    12336,\r\n\t    12608,\r\n\t    13085,\r\n\t    13217,\r\n\t    13362,\r\n\t    14364,\r\n\t    14377,\r\n\t    14378\r\n\t  ],\r\n\t  \"types\":[  \r\n\t    14367,\r\n\t    8988\r\n\t  ],\r\n\t  \"category_tags\":[  \r\n\t    \"frozen\",\r\n\t    \"convenience-foods\",\r\n\t  ],\r\n\t}",
+			"headers": "",
+			"pathVariables": {
+				"id": "",
+				"token": ""
+			}
+		},
+		{
+			"id": "69df038b-9aea-4b91-afdc-372ce5fe9550",
+			"name": "deleteProduct",
+			"url": "admin/product/deleteProduct/:id/:token",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "DELETE",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": ""
+				},
+				{
+					"key": "token",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"responses": [
+				{
+					"id": "1e931a5b-07a8-4ef1-8008-7b057c6654e7",
+					"name": "deleteProducts",
+					"status": "",
+					"mime": "",
+					"language": "",
+					"text": "{\n\t\"success\": true,\n\tid : 1231231\n}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "admin/product/deleteProduct/:id/:token",
+						"pathVariableData": [
+							{
+								"key": "id",
+								"value": ""
+							},
+							{
+								"key": "token",
+								"value": ""
+							}
+						],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "id",
+								"value": "1232131",
+								"description": "",
+								"enabled": true
+							},
+							{
+								"key": "name",
+								"value": "\"gi do\"",
+								"description": "",
+								"enabled": true
+							}
+						],
+						"data": null,
+						"method": "DELETE",
+						"dataMode": "params"
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "69df038b-9aea-4b91-afdc-372ce5fe9550",
+					"collection": "b0d251ad-b911-4377-8a1e-9117425f0ce0"
+				}
+			],
+			"headers": "",
+			"pathVariables": {
+				"id": "",
+				"token": ""
+			}
+		},
+		{
+			"id": "99273650-5a79-441c-ada6-3ff3aa5a7d2d",
+			"name": "addProduct",
+			"url": "admin/product/addProduct/:id/:token",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "POST",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": ""
+				},
+				{
+					"key": "token",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"auth": null,
+			"events": [],
+			"folder": null,
+			"responses": [
+				{
+					"id": "09fd9dac-bd2c-4913-afa8-800bc1c20f0c",
+					"name": "addProducts",
+					"status": "",
+					"mime": "",
+					"language": "",
+					"text": "{\n\t\"success\" : true,\n\t\"id\":125559\n}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "admin/product/addProduct/:id/:token",
+						"pathVariableData": [
+							{
+								"key": "id",
+								"value": ""
+							},
+							{
+								"key": "token",
+								"value": ""
+							}
+						],
+						"queryParams": [],
+						"headerData": [
+							{
+								"key": "Content-Type",
+								"description": "",
+								"type": "text",
+								"name": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"data": "{  \r\n  \"pricing\":{  \r\n    \"price\":5.9,\r\n    \"discounts\":{  \r\n      \"promo\":{  \r\n        \"promo_price\":2.95,\r\n        \"savings\":50.0,\r\n        \"savings_amount\":2.95,\r\n        \"savings_type\":1,\r\n        \"savings_text\":\"HALF PRICE\"\r\n      },\r\n      \"live_up\":{  \r\n        \"promo_price\":2.36,\r\n        \"savings\":60.0,\r\n        \"savings_amount\":3.54,\r\n        \"savings_type\":1,\r\n        \"savings_text\":\"60% OFF\"\r\n      }\r\n    }\r\n  },\r\n  \"amount\":5,\r\n  \"id\":125559,\r\n  \"name\":\"gi do\",\r\n  \"title\":\"Birds Eye Steamfresh Lightly Seasoned Asian Style Rice With Carrots Peas Edamame and Onion - Frozen\",\r\n  \"desc\":\"With Birds Eye Steamfresh Chef’s Favorites, you can enjoy lightly seasoned Asian Style rice with carrots, peas, edamame and onions. Contains no artificial preservatives, flavors or colors. Good source of Vitamin A. Perfectly cooks in the bag & ready in minutes.\",\r\n\r\n  \"images\":[  \r\n    {  \r\n      \"h\":0,\r\n      \"w\":0,\r\n      \"name\":\"/i/m/014500025166_0089_1504062571503.jpg\",\r\n      \"position\":0\r\n    },\r\n    {  \r\n      \"h\":0,\r\n      \"w\":0,\r\n      \"name\":\"/i/m/014500025166_0090_1504062574981.jpg\",\r\n      \"position\":1\r\n    }\r\n  ],\r\n  \"categories\":[  \r\n    249,\r\n    250,\r\n    8957,\r\n    10490,\r\n    12336,\r\n    12608,\r\n    13085,\r\n    13217,\r\n    13362,\r\n    14364,\r\n    14377,\r\n    14378\r\n  ],\r\n  \"types\":[  \r\n    14367,\r\n    8988\r\n  ],\r\n  \"category_tags\":[  \r\n    \"frozen\",\r\n    \"convenience-foods\"\r\n  ]\r\n}",
+						"method": "POST",
+						"dataMode": "raw"
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "99273650-5a79-441c-ada6-3ff3aa5a7d2d",
+					"collection": "b0d251ad-b911-4377-8a1e-9117425f0ce0"
+				}
+			],
+			"headers": "",
+			"pathVariables": {
+				"id": "",
+				"token": ""
+			}
+		},
+		{
+			"id": "fc5be7f7-89d9-499d-92cd-cb0a9dcd2649",
+			"name": "product",
+			"url": "/products/:id",
+			"description": "",
+			"data": null,
+			"dataMode": "params",
+			"headerData": [],
+			"method": "GET",
+			"pathVariableData": [
+				{
+					"key": "id",
+					"value": ""
+				}
+			],
+			"queryParams": [],
+			"auth": null,
+			"events": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "6e1fa9e6-3af2-48f7-9bc0-96d89557b569",
+						"type": "text/javascript",
+						"exec": [
+							"{  ",
+							"  \"pricing\":{  ",
+							"    \"promo_id\":205184,",
+							"    \"on_sale\":1,",
+							"    \"price\":5.9,",
+							"    \"promo_price\":2.95,",
+							"    \"savings\":50.0,",
+							"    \"savings_amount\":2.95,",
+							"    \"savings_type\":1,",
+							"    \"savings_text\":\"HALF PRICE\",",
+							"    \"discounts\":{  ",
+							"      \"promo\":{  ",
+							"        \"promo_price\":2.95,",
+							"        \"savings\":50.0,",
+							"        \"savings_amount\":2.95,",
+							"        \"savings_type\":1,",
+							"        \"savings_text\":\"HALF PRICE\"",
+							"      },",
+							"      \"live_up\":{  ",
+							"        \"promo_price\":2.36,",
+							"        \"savings\":60.0,",
+							"        \"savings_amount\":3.54,",
+							"        \"savings_type\":1,",
+							"        \"savings_text\":\"60% OFF\"",
+							"      }",
+							"    },",
+							"    \"applicable_discount\":\"promo\"",
+							"  },",
+							"  \"id\":125559,",
+							"  \"title\":\"Birds Eye Steamfresh Lightly Seasoned Asian Style Rice With Carrots Peas Edamame and Onion - Frozen\",",
+							"  \"desc\":\"With Birds Eye Steamfresh Chef’s Favorites, you can enjoy lightly seasoned Asian Style rice with carrots, peas, edamame and onions. Contains no artificial preservatives, flavors or colors. Good source of Vitamin A. Perfectly cooks in the bag & ready in minutes.\",",
+							"  \"measure\":{  ",
+							"    \"wt_or_vol\":\"319 g\",",
+							"    \"size\":0.0",
+							"  },",
+							"  \"details\":{  ",
+							"    \"status\":1,",
+							"    \"prod_type\":0,",
+							"    \"uri\":\"birds-eye-steamfresh-lightly-seasoned-asian-style-rice-125559\",",
+							"    \"country_of_origin\":\"United States\",",
+							"    \"storage_class\":\"Frozen\",",
+							"    \"is_new\":0",
+							"  },",
+							"  \"images\":[  ",
+							"    {  ",
+							"      \"h\":0,",
+							"      \"w\":0,",
+							"      \"name\":\"/i/m/014500025166_0089_1504062571503.jpg\",",
+							"      \"position\":0",
+							"    },",
+							"    {  ",
+							"      \"h\":0,",
+							"      \"w\":0,",
+							"      \"name\":\"/i/m/014500025166_0090_1504062574981.jpg\",",
+							"      \"position\":1",
+							"    }",
+							"  ],",
+							"  \"warehouse\":{  ",
+							"    \"measure\":{  ",
+							"      \"vol_metric_alt\":\"\",",
+							"      \"wt_metric\":\"g\",",
+							"      \"vol_metric\":\"\",",
+							"      \"wt\":319.0,",
+							"      \"w\":0.0,",
+							"      \"l\":0.0,",
+							"      \"h\":0.0",
+							"    }",
+							"  },",
+							"  \"sku\":\"014500025166\",",
+							"  \"filters\":{  ",
+							"    \"is_organic\":0,",
+							"    \"brand_uri\":\"birds-eye\",",
+							"    \"mfr_name\":\"Birds Eye\",",
+							"    \"frequency\":59,",
+							"    \"brand_name\":\"Birds Eye\",",
+							"    \"vendor_name\":\"SuperVal\",",
+							"    \"trending_frequency\":27,",
+							"    \"country_of_origin\":\"United States\"",
+							"  },",
+							"  \"categories\":[  ",
+							"    249,",
+							"    250,",
+							"    8957,",
+							"    10490,",
+							"    12336,",
+							"    12608,",
+							"    13085,",
+							"    13217,",
+							"    13362,",
+							"    14364,",
+							"    14377,",
+							"    14378",
+							"  ],",
+							"  \"types\":[  ",
+							"    14367,",
+							"    8988",
+							"  ],",
+							"  \"category_tags\":[  ",
+							"    \"frozen\",",
+							"    \"convenience-foods\",",
+							"    \"ready-meals-250\",",
+							"    \"western-1771\",",
+							"    \"rice-dishes\",",
+							"    \"featured-eat-the-world\",",
+							"    \"america\",",
+							"    \"united-states\",",
+							"    \"asian\",",
+							"    \"direct-retail\",",
+							"    \"cook-smart-easy-meals\",",
+							"    \"frozensale\",",
+							"    \"festus\",",
+							"    \"carnconv\",",
+							"    \"difiesta\",",
+							"    \"international-top-picks\",",
+							"    \"ready-meals-14364\",",
+							"    \"mgmf\",",
+							"    \"mgmm\"",
+							"  ],",
+							"  \"img\":{  ",
+							"    \"h\":0,",
+							"    \"w\":0,",
+							"    \"name\":\"/i/m/014500025166_0089_1504062571503.jpg\",",
+							"    \"position\":0",
+							"  },",
+							"  \"product_life\":{  ",
+							"    \"time\":45,",
+							"    \"metric\":\"D\",",
+							"    \"is_minimum\":true,",
+							"    \"time_including_delivery\":46",
+							"  },",
+							"  \"description_fields\":{  ",
+							"    \"secondary\":[  ",
+							"",
+							"    ],",
+							"    \"primary\":[  ",
+							"      {  ",
+							"        \"name\":\"Country of Origin\",",
+							"        \"content\":\"United States\"",
+							"      }",
+							"    ]",
+							"  },",
+							"  \"labels\":[  ",
+							"    \"frozen\"",
+							"  ],",
+							"  \"promotions\":[  ",
+							"    {  ",
+							"      \"id\":205184,",
+							"      \"type\":1,",
+							"      \"savings_text\":\"HALF PRICE\",",
+							"      \"live_up_savings_text\":\"60% OFF\",",
+							"      \"promo_label\":\"\",",
+							"      \"current_product_group_id\":1",
+							"    }",
+							"  ],",
+							"  \"inventory\":{  ",
+							"    \"atp_status\":0,",
+							"    \"max_sale_qty\":48,",
+							"    \"qty_in_carts\":0,",
+							"    \"qty_in_stock\":48,",
+							"    \"stock_status\":1,",
+							"    \"stock_type\":0,",
+							"    \"atp_lots\":[  ",
+							"      {  ",
+							"        \"from_date\":\"2018-07-12T16:27:11Z\",",
+							"        \"to_date\":\"2018-07-17T15:59:59Z\",",
+							"        \"stock_status\":1,",
+							"        \"qty_in_stock\":13,",
+							"        \"qty_in_carts\":0",
+							"      }",
+							"    ],",
+							"    \"next_available_date\":\"2018-07-12T16:27:11Z\",",
+							"    \"limited_stock_status\":0",
+							"  }",
+							"}"
+						]
+					}
+				}
+			],
+			"folder": null,
+			"responses": [
+				{
+					"id": "c2c2b4f4-0a98-4fe4-9abf-4e433c1f4065",
+					"name": "products",
+					"status": "",
+					"mime": "",
+					"language": "",
+					"text": "{  \r\n  \"pricing\":{  \r\n    \"price\":5.9,\r\n    \"discounts\":{  \r\n      \"promo\":{  \r\n        \"promo_price\":2.95,\r\n        \"savings\":50.0,\r\n        \"savings_amount\":2.95,\r\n        \"savings_type\":1,\r\n        \"savings_text\":\"HALF PRICE\"\r\n      },\r\n      \"live_up\":{  \r\n        \"promo_price\":2.36,\r\n        \"savings\":60.0,\r\n        \"savings_amount\":3.54,\r\n        \"savings_type\":1,\r\n        \"savings_text\":\"60% OFF\"\r\n      }\r\n    }\r\n  },\r\n  \"amount\":5,\r\n  \"id\":125559,\r\n  \"name\":\"gi do\",\r\n  \"title\":\"Birds Eye Steamfresh Lightly Seasoned Asian Style Rice With Carrots Peas Edamame and Onion - Frozen\",\r\n  \"desc\":\"With Birds Eye Steamfresh Chef’s Favorites, you can enjoy lightly seasoned Asian Style rice with carrots, peas, edamame and onions. Contains no artificial preservatives, flavors or colors. Good source of Vitamin A. Perfectly cooks in the bag & ready in minutes.\",\r\n\r\n  \"images\":[  \r\n    {  \r\n      \"h\":0,\r\n      \"w\":0,\r\n      \"name\":\"/i/m/014500025166_0089_1504062571503.jpg\",\r\n      \"position\":0\r\n    },\r\n    {  \r\n      \"h\":0,\r\n      \"w\":0,\r\n      \"name\":\"/i/m/014500025166_0090_1504062574981.jpg\",\r\n      \"position\":1\r\n    }\r\n  ],\r\n  \"categories\":[  \r\n    249,\r\n    250,\r\n    8957,\r\n    10490,\r\n    12336,\r\n    12608,\r\n    13085,\r\n    13217,\r\n    13362,\r\n    14364,\r\n    14377,\r\n    14378\r\n  ],\r\n  \"types\":[  \r\n    14367,\r\n    8988\r\n  ],\r\n  \"category_tags\":[  \r\n    \"frozen\",\r\n    \"convenience-foods\",\r\n  ],\r\n}",
+					"responseCode": {
+						"code": 200,
+						"name": "OK"
+					},
+					"requestObject": {
+						"url": "/products/:id_product",
+						"pathVariableData": [
+							{
+								"key": "id_product",
+								"value": ""
+							}
+						],
+						"queryParams": [],
+						"headerData": [],
+						"data": null,
+						"method": "GET",
+						"dataMode": "params"
+					},
+					"headers": [],
+					"cookies": [],
+					"request": "fc5be7f7-89d9-499d-92cd-cb0a9dcd2649",
+					"collection": "b0d251ad-b911-4377-8a1e-9117425f0ce0"
+				}
+			],
+			"headers": "",
+			"pathVariables": {
+				"id": ""
+			}
+		}
+	]
+}
