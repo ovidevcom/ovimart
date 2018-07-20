@@ -4,21 +4,22 @@
       <nav>
         <ul>
           <li class="nav-item brand-logo">
-            redmart
+            <a href="#">redmart</a>
           </li>
           <li class="search-feild">
               <input type="text" placeholder="Search for a product brand" class="search-input">
-              <font-awesome-icon icon="search" />
+              <a href="#"><font-awesome-icon icon="search" /></a>
           </li>
-          <li v-show="isLogin" class="nav-item">LIVE UP</li>
-          <li class="nav-item">Help</li>
+          <li v-show="isLogin" class="nav-item"><a href="#">LIVE UP</a></li>
+          <li class="nav-item"><a href="#">Help</a></li>
           <li class="nav-item">
-            <font-awesome-icon icon="shopping-cart" style=""/>
+            <a href="#"><font-awesome-icon icon="shopping-cart" style=""/>
             Cart
+            </a> 
           </li>
-          <li v-show="!isLogin" class="nav-item">Sign up</li>
-          <li v-show="!isLogin" class="nav-item">Log in</li>
-          <li v-show="isLogin" class="nav-item">Hi! {{user.name}}</li>
+          <li v-show="!isLogin" class="nav-item"><a href="#">Sign up</a></li>
+          <li v-show="!isLogin" class="nav-item"><a href="#">Log in</a></li>
+          <li v-show="isLogin" class="nav-item"><a href="#">Hi! {{user.name}}</a></li>
         </ul>
       </nav>
     </header>
@@ -56,7 +57,6 @@ nav {
   background-color: #eb2c4c;
   width: 100%;
   height: 45px;
-  color: white;
   font-size: 15px;
   line-height: 45px;
 }
@@ -69,6 +69,10 @@ ul {
   justify-content: space-between;
   text-align: center;
   align-items: center;
+}
+a {
+  text-decoration: none;
+  color: white;
 }
 .brand-logo {
   text-transform: uppercase;
