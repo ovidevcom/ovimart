@@ -1,47 +1,52 @@
 <template>
     <div class="orderSummary_container">
-        <div id="order-summary">
-            <div class="showInCart">
+        <div id="order_summary">
+            <div id="showInCart">
                 <div class="checkoutBtn">
                     <div class="primaryBtn">Check out</div>
                 </div>
             </div>
 
-            <div class="summaryArea">
+            <div id="summaryArea">
                 <div class="orderSummary">
                     <div id="subTotalArea">
                         <div class="text">Subtotal</div>
-                        <div class="subTotal-price">$100.00</div>
+                        <div class="subTotal_price">{{ subTotalPrice | filterPrice }}</div>
                     </div>
 
                     <div id="deliveryArea">
                         <div class="deliveryOptions">
                             <div>
-                                <span class="deliveryOptions-title">Delivery Options</span>
-                                <div class="deliveryOptions-icon">i</div>
+                                <span class="deliveryOptions_title">Delivery Options</span>
+                                <div class="deliveryOptions_icon">i</div>
                             </div>
                         </div>
 
                         <div class="deliveryFee_container">
-                            <div class="deliveryFee_selector">
+                            <div 
+                                class="deliveryFee_selector"
+                                @mouseover="onMouseOver"
+                                @mouseout="onMouseOut">
                                 <div>
-                                    <div class="deliveryFee_selector-title">FREE Delivery with </div>
-                                    <div class="deliveryFee_selector-subtext">
+                                    <div class="deliveryFee_selector_title">FREE Delivery with </div>
+                                    <div class="deliveryFee_selector_subtext">
                                         Save $10 now and earn 5% credits on every order
                                     </div>
-                                    <div class="deliveryFee_selector-find_out_more">
-                                        <div class="findOutMoreBtn">Find out more</div>
+                                    <div class="deliveryFee_selector_find_out_more" v-show="findOutMore">
+                                        <div class="findOutMoreBtn" @click="showModal = true">Find out more</div>
                                     </div>
                                 </div>
                             </div>
 
+                            <deliveryModal v-if="showModal" @close="showModal = false"/>
+
                             <div class="deliveryFee_selector">
                                 <div>
-                                    <div class="deliveryFee_selector-title">Standard Delivery</div>
+                                    <div class="deliveryFee_selector_title">Standard Delivery</div>
                                 </div>
-                                <div style="deliveryFee_selector-price-free">
-                                    <span class="deliveryFee_selector-price">$4.00</span> 
-                                    <span class="deliveryFee_selector-free"> FREE</span>
+                                <div style="deliveryFee_selector-price_free">
+                                    <span class="deliveryFee_selector_price">$4.00</span> 
+                                    <span class="deliveryFee_selector_free"> FREE</span>
                                 </div>
                             </div>
                         </div>
@@ -50,9 +55,9 @@
                     <div class="couponArea">
                         <div class="couponCode">
                             <div class="couponInputForm">
-                                <div class="coupon-container">
+                                <div class="coupon_container">
                                     <input type="text" placeholder="Coupon code" value="">
-                                    <div class="couponBtn-container">
+                                    <div class="couponBtn_container">
                                         <div class="couponBtn">ENTER</div>
                                     </div>
                                 </div>
@@ -60,14 +65,27 @@
                         </div>
 
                         <div class="couponTerms">
-
+                            <div class="termText">
+                                <strong>Terms &amp; Conditions</strong>
+                                <br>
+                                1. Limited to use of 1 coupon per checkout<br>
+                                2. Discount is not applicable to baby formula & milk products
+                            </div>
                         </div>
                     </div>
 
                     <div class="totalRow">
-
+                        <div>Total</div>
+                        <div class="totalPrice">$100.00</div>
                     </div>
+                </div>
+            </div>
 
+            <div id="adsArea">
+                <div class="ad">
+                    <a href="">
+                        <img class="ad-imamge" src="https://rm-goldenmedia.imgix.net/e18bb09eb46898665946a1dedbb979c0.jpg?auto=format">
+                    </a>
                 </div>
             </div>
         </div>
@@ -75,14 +93,54 @@
 </template>
 
 <script>
-export default {
+import deliveryModal from './deliveryModal.vue';
 
+export default {
+    components: {
+       deliveryModal 
+    },
+    data() {
+        return {
+            findOutMore: false,
+            showModal: false,
+        }
+    },
+    filters: {
+        filterPrice(price) {
+            return ('$' + Number(price).toFixed(2));
+        }
+    },
+    computed: {
+        //Price without delivery fee
+        subTotalPrice() {
+            return this.$store.getters.getTotalPrice;
+        }
+    },
+    methods: {
+        onMouseOver() {
+            this.findOutMore = true;
+        },
+        onMouseOut() {
+            this.findOutMore = false;
+        },
+        showModal() {
+            this.showModal = true;
+        }
+      }
 }
 </script>
 
-<style>
+<style scoped>
+strong {
+    font-weight: 700;
+}
 
-.showInCart {
+::placeholder { 
+    color: #999;
+    opacity: 1;
+}
+
+#showInCart {
     margin-top: 7px;
     margin-bottom: 11px;
 }
@@ -106,26 +164,26 @@ export default {
     background-color: #de142b;
 }
 
-.summaryArea {
+#summaryArea {
     margin-bottom: 16px;
 }
 
 .orderSummary {
     border: 1px solid #ebebeb;
     position: relative;
+    padding: 10px;
 }
 
 .orderSummary>div {
     clear: both;
-    margin: 0 20px;
-    padding: 10px 0 0;
+    margin: 0 10px;
 }
 
 .text {
      float: left;
 }
 
-.subTotal-price {
+.subTotal_price {
     text-align: right;
     font-weight: 700;
 }
@@ -136,11 +194,11 @@ export default {
     color: #999;
 }
 
-.deliveryOptions-title {
+.deliveryOptions_title {
     font-weight: 600;
 }
 
-.deliveryOptions-icon {
+.deliveryOptions_icon {
     display: inline-block;
     font-size: 11px;
     padding: 0 5px 0 5px;
@@ -174,32 +232,32 @@ export default {
     transition: box-shadow .1s,border .1s,height .1s;
 }
 
-.deliveryFee_selector-onclick {
+.deliveryFee_selector:hover {
     box-shadow: 0 0 8px 0 #5acad8;
     border: 1px solid #5acad8;
 }
 
-.deliveryFee_selector-title {
+.deliveryFee_selector_title {
     font-size: 16px;
 }
 
-.deliveryFee_selector-subtext {
+.deliveryFee_selector_subtext {
     margin-top: 2px;
     font-size: 13px;
 }
 
-.deliveryFee_selector-find_out_more {
+.deliveryFee_selector_find_out_more {
     display: inline-block;
     font-size: 15px;
     margin-top: 8px;
 }
 
-.deliveryFee_selector-price {
+.deliveryFee_selector_price {
     text-decoration: line-through;
     color: #999;
 }
 
-.deliveryFee_selector-free {
+.deliveryFee_selector_free {
     color: #80ab06;
     font-weight: 700;
 }
@@ -254,12 +312,12 @@ export default {
     border-radius: 4px;
 }
 
-.coupon-container {
+.coupon_container {
     display: flex;
     flex-direction: row;
 }
 
-.couponBtn-container {
+.couponBtn_container {
     margin: 3px;
     height: auto;
     width: 60px;
@@ -267,7 +325,7 @@ export default {
     position: relative;
 }
 
-.couponBtn-container div{
+.couponBtn_container div{
     height: 100%;
     width: 100%;
 }
@@ -283,4 +341,51 @@ export default {
     font-weight: 600;
     border-radius: 4px;
 }
+
+.couponBtn:hover {
+    background-color: #de142b;
+}
+
+.couponTerms {
+    margin-top: 12px;
+    margin-bottom: 22px;
+}
+
+.termText {
+    float: none;
+    color: #999;
+    font-weight: 400;
+    font-size: .7em;
+}
+
+.totalRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 16px;
+    margin-bottom: 16px;
+    margin-top: 10px;
+    font-size: 20px;
+    border-top: 1px solid #ebebeb;
+}
+
+.totalPrice {
+    font-weight: 700;
+}
+
+.ad {
+    height: 250px;
+    width: 300px;
+    box-sizing: border-box;
+}
+
+.ad_image {
+    will-change: opacity;
+    opacity: 1!important;
+    filter: none;
+    transition: all .35s ease-out;
+    vertical-align: bottom;
+}
+
+
 </style>
