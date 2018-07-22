@@ -2,17 +2,20 @@ import Vue from 'vue';
 import Router from 'vue-router';
 
 import CartPage from '../views/CartPage.vue';
+import CheckoutPage from '../Checkout/CheckoutPage.vue';
 
 Vue.use(Router)
 
-const router =  new Router({
-  routes: [
-    {
-      path: '/cart',
-      name: 'cartPage',
-      component: CartPage
-    }
-  ]
+const router = new Router({
+    routes: [{
+        path: '/cart',
+        name: 'cartPage',
+        component: CartPage
+    }, {
+        path: '/checkout',
+        name: 'Checkout',
+        component: CheckoutPage
+    }]
 })
 
 export default router;

@@ -129,6 +129,7 @@ nav {
   line-height: 45px;
   top: 0;
   left: 0;
+  z-index: 2;
 }
 nav ul {
   width: 75%;
@@ -204,12 +205,6 @@ nav a {
     flex-shrink: 1;
     flex-basis: 100%;
   }
-}
-.content {
-  width: 75%;
-  min-height: 800px;
-  background-color: white;
-  margin: 45px auto 30px auto;
 }
 .footer-container-info {
   width: 50%;
