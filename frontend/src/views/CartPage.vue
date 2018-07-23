@@ -291,6 +291,7 @@ h3 {
 .listContainer {
     margin: .6em 0;
     font-size: 1em;
+    overflow: auto;
 }
 
 .carouselListWrapper {
