@@ -1,0 +1,16 @@
+{
+  "name": "storefront",
+  "version": "1.0.0",
+  "description": "this is frontend website for ovimart, it's building on Next.js ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Imex",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^6.1.1",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1"
+  }
+}
