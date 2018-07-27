@@ -29,7 +29,7 @@ https://github.com/ovidevcom/ovimart
 [10 days]  Build API application by Node.js with this source https://github.com/kunalkapadia/express-mongoose-es6-rest-api
 
 
-[12 days] Build Frontend website with Vue CLI, the design layout same redmart.com
+[12 days] Build Frontend website with Next.js, Redux and Rematch, the design layout same redmart.com
 
 
 [1 days] Deploy version 1 on live server.
