@@ -1,10 +1,20 @@
 import Layout from '../components/MyLayout.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import { AnchorButton, Elevation, Card, Button, Tab, Tabs  } from "@blueprintjs/core";
+import '../styles/style.scss'
 
 const Index = (props) => (
   <Layout>
     <h1>Batman TV Shows</h1>
+    <AnchorButton text="Click" />
+   
+    <Card interactive={true} elevation={Elevation.TWO}>
+    <h5><a href="#">Card heading</a></h5>
+    <p>Card content</p>
+    <Button>Submit</Button>
+</Card>
+
     <ul>
       {props.shows.map(({show}) => (
         <li key={show.id}>
