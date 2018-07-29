@@ -1,19 +1,21 @@
-$color: #2ecc71;
+
+// fonts
+$font-family: 'Lato', Helvetica, sans-serif;
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-heavy: 700;
+$font-height: 1.5;
+$topMenuBackground: #333;
 $colorHeaderWrapBackGround:#db122e;
 $headerTextColor: #fff;
 $headerLink: #fff;
+// colors
+$dark-grey: #333447;
+$dark-gray: #333447; // for the Americans
 
-//---------------
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font-size: 100%;
-  
-  vertical-align: baseline; 
-}
+@import './root.scss';
 
-  //---------------
+  //--------CUSTOM THEME-------
 button:focus , a:focus, select:focus
 {outline:0;}
 
@@ -30,17 +32,41 @@ button:focus , a:focus, select:focus
  color: $headerLink;
 }
 .headerWrap{ 
+  .topBarText{
+    font-size: 11px;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  .topMenu{
+    background: $topMenuBackground;
+    min-height: 25px;
+  }
   .logo{
-  max-width: 200px;
+    margin-top: 20px;
+    max-width: 200px;
+ }
+ .headerMain{
+   min-height: 85px;
+   .logoWrap{
+    width: 250px;
+    display: inline-block;
+   }
+   .searchBar{
+     width: 400px;
+     margin-top: 20px;
+     margin-left: 50px;
+     display: inline-block;
+   }
  }
  .topSecondaryMenu{
   list-style: none;
   margin: 0;
   padding: 0;
   float: right;
-  margin-top: 10px;
+  margin: 10px 0px;
   li{
     float: left;
+    font-size:12px;
     margin-left: 10px;
   }
  }

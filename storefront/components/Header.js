@@ -15,20 +15,41 @@ const linkStyle = {
 
 const Header = () => (
     <div className="headerWrap">
-        <div className="container">      
           <div className="topMenu">
-            <ul className="topSecondaryMenu">
-              <li>Good Morning</li>
-              <li><Link href="#"><a>Sell</a></Link></li>
-              <li><Link href="#"><a>My Account</a></Link></li>
-              <li><Link href="#"><a>Track Order</a></Link></li>
-              <li><Link href="#"><a>Log In</a></Link></li>
-            </ul>
+            <div className="container">  
+                <span className="topBarText">CHOOSE A PRODUCT WORTH OVER $200 AND SAVE 20%.</span>
+                <ul className="topSecondaryMenu">
+                  <li><Link href="#"><a>Sell</a></Link></li>
+                  <li><Link href="#"><a>My Account</a></Link></li>
+                  <li><Link href="#"><a>Track Order</a></Link></li>
+                  <li><Link href="#"><a>Log In</a></Link></li>
+                </ul>
+            </div>
+            <div className="clearfix"/>
+          </div>
+          <div className="container">
+            <div className="headerMain">
+              <div class="row">
+                <div class="col-2">
+                    <div class="logoWrap">
+                          <img src="/static/images/logo-eshop.png" className="logo" alt="e-ShopDirect logo" />
+                        </div>
+                </div>
+                <div class="col-5">
+                    <div className="searchBar">
+                        <div class="bp3-input-group .modifier">
+                          <span class="bp3-icon bp3-icon-search"></span>
+                          <input class="bp3-input" type="search" placeholder="Search input" dir="auto" />
+                        </div>
+                    </div>
+          
+                </div>
+                <div class="col-5">
+                2222
+                </div>
+              </div>
+            </div>
         </div>
-        <div>
-          <img src="/static/images/logo-eshop.png" className="logo" alt="e-ShopDirect logo" />
-        </div>
-      </div>
       <div className="container">
        <Navbar className={Classes.DARK}>
         <NavbarGroup align={Alignment.LEFT}>
