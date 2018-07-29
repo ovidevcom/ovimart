@@ -26,7 +26,7 @@ const Header = () => (
             </ul>
         </div>
         <div>
-          <img src="/static/images/logo-eshop.png" alt="e-ShopDirect logo" />
+          <img src="/static/images/logo-eshop.png" className="logo" alt="e-ShopDirect logo" />
         </div>
       </div>
       <div className="container">

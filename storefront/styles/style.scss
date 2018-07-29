@@ -29,3 +29,19 @@ button:focus , a:focus, select:focus
 .headerWrap a{
  color: $headerLink;
 }
+.headerWrap{ 
+  .logo{
+  max-width: 200px;
+ }
+ .topSecondaryMenu{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: right;
+  margin-top: 10px;
+  li{
+    float: left;
+    margin-left: 10px;
+  }
+ }
+}
