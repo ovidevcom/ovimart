@@ -45,7 +45,14 @@ const Header = () => (
           
                 </div>
                 <div class="col-5">
-                2222
+                  <div class="bp3-navbar-group bp3-align-right">
+                    <button class="bp3-button bp3-minimal bp3-icon-home">Home</button>
+                    <button class="bp3-button bp3-minimal bp3-icon-document">Files</button>
+                    <span class="bp3-navbar-divider"></span>
+                    <button class="bp3-button bp3-minimal bp3-icon-user"></button>
+                    <button class="bp3-button bp3-minimal bp3-icon-notifications"></button>
+                    <button class="bp3-button bp3-minimal bp3-icon-cog"></button>
+                  </div>
                 </div>
               </div>
             </div>

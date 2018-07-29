@@ -57,6 +57,19 @@ button:focus , a:focus, select:focus
      margin-left: 50px;
      display: inline-block;
    }
+   .bp3-button::before{
+      color: #fff;
+      font-size: 27px;
+   }
+   .bp3-button{
+     color: #fff;
+     font-size: 14px;
+     margin-left: 20px;
+   }
+   .bp3-navbar-divider {
+      margin: 0 10px;
+      border-left: 1px solid #ff94a4;
+  }
  }
  .topSecondaryMenu{
   list-style: none;
