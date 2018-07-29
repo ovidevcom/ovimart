@@ -14,7 +14,22 @@ const linkStyle = {
 }
 
 const Header = () => (
-    <div>
+    <div className="headerWrap">
+        <div className="container">      
+          <div className="topMenu">
+            <ul className="topSecondaryMenu">
+              <li>Good Morning</li>
+              <li><Link href="#"><a>Sell</a></Link></li>
+              <li><Link href="#"><a>My Account</a></Link></li>
+              <li><Link href="#"><a>Track Order</a></Link></li>
+              <li><Link href="#"><a>Log In</a></Link></li>
+            </ul>
+        </div>
+        <div>
+          <img src="/static/images/logo-eshop.png" alt="e-ShopDirect logo" />
+        </div>
+      </div>
+      <div className="container">
        <Navbar className={Classes.DARK}>
         <NavbarGroup align={Alignment.LEFT}>
           <NavbarHeading>ImexMart</NavbarHeading>
@@ -35,6 +50,7 @@ const Header = () => (
           />
         </NavbarGroup>
       </Navbar>
+      </div>
         {/* <Link href="/">
           <a style={linkStyle}>Home</a>
         </Link>
