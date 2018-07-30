@@ -1,5 +1,5 @@
-import Header from './header'
-import Footer from './footer'
+import Header from './TheHeader'
+import Footer from './TheFooter'
 const Layout = (props) => (
   <div>
     <Header />

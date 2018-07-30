@@ -1,4 +1,4 @@
-import Layout from '../components/layout.js'
+import Layout from '../components/TheLayout.js'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import { AnchorButton, Elevation, Card, Button, Tab, Tabs  } from "@blueprintjs/core";

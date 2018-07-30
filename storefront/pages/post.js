@@ -1,4 +1,4 @@
-import Layout from '../components/layout.js'
+import Layout from '../components/TheLayout.js'
 import fetch from 'isomorphic-unfetch'
 
 const Post =  (props) => (

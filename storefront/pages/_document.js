@@ -14,6 +14,7 @@ export default class MyDocument extends Document {
           <link href="https://unpkg.com/normalize.css@^7.0.0" rel="stylesheet" />
           <link href="https://unpkg.com/@blueprintjs/core@3.0.1/lib/css/blueprint.css" rel="stylesheet" />
           <link href="https://unpkg.com/@blueprintjs/icons@3.0.0/lib/css/blueprint-icons.css" rel="stylesheet" />
+          <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css" />
           <link rel='stylesheet' href='/_next/static/style.css' />
         </Head>
         <body>

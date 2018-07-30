@@ -30,12 +30,12 @@ const Header = () => (
           <div className="container">
             <div className="headerMain">
               <div class="row">
-                <div class="col-2">
+                <div class="col-md-2">
                     <div class="logoWrap">
                           <img src="/static/images/logo-eshop.png" className="logo" alt="e-ShopDirect logo" />
                         </div>
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                     <div className="searchBar">
                         <div class="bp3-input-group .modifier">
                           <span class="bp3-icon bp3-icon-search"></span>
@@ -44,7 +44,7 @@ const Header = () => (
                     </div>
           
                 </div>
-                <div class="col-5">
+                <div class="col-md-5">
                   <div class="bp3-navbar-group bp3-align-right">
                     <button class="bp3-button bp3-minimal bp3-icon-home">Home</button>
                     <button class="bp3-button bp3-minimal bp3-icon-document">Files</button>
