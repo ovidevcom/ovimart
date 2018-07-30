@@ -38,7 +38,5 @@ https://github.com/ovidevcom/ovimart
 [5 days] Test and fix bugs.
 
 
-API(RESTFUL) ←-- Vue.js
-
 
 
