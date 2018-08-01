@@ -1,0 +1,55 @@
+.linkStyle {
+    padding-bottom: 10px;
+}
+
+.footerWrap {
+    border-top-style: solid;
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: #ccc;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+  }
+  
+.footerLinksContainer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding: 20px 60px 20px;
+}
+  
+.footerTitle {
+    font-weight: 700;
+    padding-bottom: 12px;
+  }
+  
+.footerColumn {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    color: #333;
+  }
+
+.input-container {
+    display: flex;
+}
+
+.email-input {
+    width: 300px;
+}
+  
+.signUpBtn {
+    border-radius: 0px;
+    border: none;
+    background: #EE4054;
+    padding: 10px 15px 10px;
+    color: #fff;
+    right: 0;
+    cursor: pointer;
+}
+
+.signUpBtn:hover {
+    background: #DB122E;
+}
+  
