@@ -29,29 +29,29 @@ const Header = () => (
           </div>
           <div className="container">
             <div className="headerMain">
-              <div class="row">
-                <div class="col-md-2">
-                    <div class="logoWrap">
+              <div className="row">
+                <div className="col-md-2">
+                    <div className="logoWrap">
                           <img src="/static/images/logo-eshop.png" className="logo" alt="e-ShopDirect logo" />
                         </div>
                 </div>
-                <div class="col-md-5">
+                <div className="col-md-5">
                     <div className="searchBar">
-                        <div class="bp3-input-group .modifier">
-                          <span class="bp3-icon bp3-icon-search"></span>
-                          <input class="bp3-input" type="search" placeholder="Search input" dir="auto" />
+                        <div className="bp3-input-group .modifier">
+                          <span className="bp3-icon bp3-icon-search"></span>
+                          <input className="bp3-input" type="search" placeholder="Search input" dir="auto" />
                         </div>
                     </div>
           
                 </div>
-                <div class="col-md-5">
-                  <div class="bp3-navbar-group bp3-align-right">
-                    <button class="bp3-button bp3-minimal bp3-icon-home">Home</button>
-                    <button class="bp3-button bp3-minimal bp3-icon-document">Files</button>
-                    <span class="bp3-navbar-divider"></span>
-                    <button class="bp3-button bp3-minimal bp3-icon-user"></button>
-                    <button class="bp3-button bp3-minimal bp3-icon-notifications"></button>
-                    <button class="bp3-button bp3-minimal bp3-icon-cog"></button>
+                <div className="col-md-5">
+                  <div className="bp3-navbar-group bp3-align-right">
+                    <button className="bp3-button bp3-minimal bp3-icon-home">Home</button>
+                    <button className="bp3-button bp3-minimal bp3-icon-document">Files</button>
+                    <span className="bp3-navbar-divider"></span>
+                    <button className="bp3-button bp3-minimal bp3-icon-user"></button>
+                    <button className="bp3-button bp3-minimal bp3-icon-notifications"></button>
+                    <button className="bp3-button bp3-minimal bp3-icon-cog"></button>
                   </div>
                 </div>
               </div>

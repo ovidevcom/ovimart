@@ -8,13 +8,7 @@ const Index = (props) => (
   <Layout>
     <div className="container">
       <h1>Batman TV Shows</h1>
-      <AnchorButton text="Click" />
-    
-      <Card interactive={true} elevation={Elevation.TWO}>
-        <h5><a href="#">Card heading</a></h5>
-        <p>Card content</p>
-        <Button>Submit</Button>
-      </Card>
+
 
         <ul>
           {props.shows.map(({show}) => (

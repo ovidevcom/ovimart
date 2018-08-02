@@ -10,49 +10,6 @@ import {
   NavbarDivider
 } from "@blueprintjs/core";
 
-import './TheFooter.scss';
-
-// const linkStyle = {
-//   paddingBottom: 10
-// }
-// const footerWrap = {
-//   borderTopStyle: 'solid',
-//   borderRadius: 0,
-//   borderWidth: 1,
-//   borderColor: '#ccc',
-//   paddingTop: 20,
-//   paddingLeft: 10,
-//   paddingBottom: 20,
-// }
-
-// const footerLinksContainer = {
-//   display: 'flex',
-//   justifyContent: 'space-between',
-//   borderBottom: '1px solid #ccc',
-//   padding: '20px 60px 20px',
-// }
-
-// const footerTitle = {
-//   fontWeight: 700,
-//   paddingBottom: 12
-// }
-
-// const footerColumn = {
-//   display: 'flex',
-//   flexDirection: 'column',
-//   fontWeight: 400,
-//   color: '#333'
-// }
-
-// const signUpBtn {
-//   border-radius: 5px;
-//   border: none;
-//   background: #EE4054;
-//   padding: 10px 15px 10px;
-//   color: #fff;
-//   right: 0;
-//   cursor: pointer;
-// }
 
 
 class Footer extends Component {
@@ -65,9 +22,9 @@ class Footer extends Component {
   
   renderColumnContent = (columnTitles) => {
     return (
-      columnTitles.map(title => {
+      columnTitles.map((title, i) => {
         return(
-          <Link href={`/`}>
+          <Link href={`/`} key={i}>
             <a className="linkStyle">{title}</a>
           </Link>
         )
