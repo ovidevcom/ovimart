@@ -1,0 +1,25 @@
+#changeInformation div div {
+    position: relative;
+}
+
+#changeInformation div div:after {
+    content: "";
+    opacity: 0;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    right: 6px;
+    top: 28px;
+}
+
+.rightPanel {
+    float: left;
+    width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+    .rightPanel {
+        float: none;
+        width: 100%;
+    }
+}
