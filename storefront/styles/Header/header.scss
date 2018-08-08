@@ -76,6 +76,7 @@
 .account-img{
         font-size: 30px;
         justify-items: center;
+        display: inline;
 }
 
 .account-text-col{
@@ -83,4 +84,32 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.number-card{
+    position: absolute;
+    // border: 1px solid blue;
+    width:20px;
+    height:20px;
+    right: 0;
+    top: 0;
+    background:white;
+    border-radius: 10px;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+}
+
+.number-ab{
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-card{
+    width: 46px;
+    position: relative;
 }

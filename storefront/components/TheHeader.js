@@ -66,7 +66,13 @@ const Header = () => (
                   <div className="header-account-row">
                     <div className="header-account-row-center">
                       <div className="account-img">
-                       <i class="fas fa-shopping-cart"></i>
+                      <div className="top-card">
+                        <i class="fas fa-shopping-cart"></i>
+                        {/* <i class="fal fa-shopping-cart"></i> */}
+                        <div className="number-card">
+                          <div className="number-ab">0</div>
+                        </div>
+                       </div>
                       </div>
                     </div>
                   </div>
