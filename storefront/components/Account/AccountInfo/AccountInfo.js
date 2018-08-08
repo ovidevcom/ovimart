@@ -52,19 +52,19 @@ export default class AccountInfo extends Component {
   }
 
   updateAccountInfo = () => {
+    this.validatePost()
   }
   validatePost = () => {
   
   }
   render() {
-    console.log(this.state.onEdit)
     if (this.state.onEdit == false)
       return (
         <section>
           <div className="titles">
             <h4>Account Information</h4>
           </div>
-          <form id="changeInformation" className="rightPanel form" action="">
+          <div id="changeInformation" className="rightPanel form" action="">
             <div>
               <div className="Full_container">
                 <div className="Half_container">
@@ -92,7 +92,7 @@ export default class AccountInfo extends Component {
             <div className="saveButton">
               <div className="Button Button_primary" onClick={this.switchToEdit.bind(this,true)}>Edit</div>
             </div>
-          </form>
+          </div>
         </section>
       )
     else
@@ -111,7 +111,7 @@ export default class AccountInfo extends Component {
                 </div>
                 <div className="Half_container">
                   <label htmlFor="last_name">Last Name</label>
-                  <input type="text" name="lastName" id="last_name" onChange={this.editLastName} value={this.state.lastName} maxLength="25" />
+                  <input type="text" name="lastName" id="last_name" onChange={this.editLastName} value={this.state.lastName} maxLength="25"/>
                   <div className="validationErrorNote"></div>
                 </div>
               </div>

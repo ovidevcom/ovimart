@@ -4,6 +4,10 @@ import "../Account.scss"
 
 export default class CreditCard extends Component {
     state = {
+        name : "",
+        cardNumber: "",
+        cvv: "",
+        expiry: "",
         displayAddCreditCard: false
     }
     openAddCreditCard = () => {
@@ -14,6 +18,26 @@ export default class CreditCard extends Component {
     closeAddCreditCard = () => {
         this.setState({
             displayAddCreditCard: false,
+        })
+    }
+    editName = (event) =>{
+        this.setState({
+            name: event.target.value
+        })
+    }
+    editCardNumber = (event) =>{
+        this.setState({
+            cardNumber: event.target.value
+        })
+    }
+    editCvv = (event) =>{
+        this.setState({
+            cvv: event.target.value
+        })
+    }
+    editExpiry = (event) =>{
+        this.setState({
+            expiry: event.target.value
         })
     }
     render() {
@@ -27,25 +51,25 @@ export default class CreditCard extends Component {
                     <div className="AddCreditCard_input_container">
                         <label htmlFor="holderName">NAME</label>
                         <div>
-                            <input id="holderName" type="text" className="Input_input" name="holderName" value="" placeholder="As shown on card" />
+                            <input id="holderName" type="text" className="Input_input" name="holderName" onChange={this.editName} value={this.state.name} placeholder="As shown on card" />
                             <div className="validationErrorNote"></div>
                         </div>
                     </div>
                     <div className="AddCreditCard_input_container">
                         <label htmlFor="accountNumber">CARD NUMBER</label>
-                        <input id="accountNumber" type="tel" className="Input_input" name="accountNumber" value="" placeholder="Minimum 15 digits"
+                        <input id="accountNumber" type="tel" className="Input_input" name="accountNumber" onChange={this.editCardNumber} value={this.state.cardNumber} placeholder="Minimum 15 digits"
                             pattern="[0-9]*" />
                         <div className="validationErrorNote"></div>
                     </div>  
                     <div className="AddCreditCard_cvv_exp_container Full_container">
                         <div className="AddCreditCard_input_container Half_container">
                             <label htmlFor="cvv">CVV</label>
-                            <input id="cvv" type="tel" className="Input_input" name="cvv" value="" placeholder="CVV" pattern="[0-9]*" />
+                            <input id="cvv" type="tel" className="Input_input" name="cvv" onChange={this.editCvv} value={this.state.cvv} placeholder="CVV" pattern="[0-9]*" />
                             <div className="validationErrorNote"></div>
                         </div>
                         <div className="AddCreditCard_input_container Half_container">
                             <label htmlFor="expiry">EXPIRY</label>
-                            <input id="expiry" type="tel" className="Input_input" name="expiry" value="" placeholder="MM / YY"
+                            <input id="expiry" type="tel" className="Input_input" name="expiry" onChange={this.editExpiry} value={this.state.expiry} placeholder="MM / YY"
                                 pattern="[0-9/]*" />
                             <div className="validationErrorNote"></div>
                         </div>
