@@ -18,6 +18,16 @@ $dark-gray: #333447; // for the Americans
   //--------CUSTOM THEME-------
 button:focus , a:focus, select:focus
 {outline:0;}
+.row-custom{
+  display: flex;
+  flex-wrap: wrap;
+ }
+ 
+ @media screen and (max-width : 670px){
+   .row-custom{
+     display: block;
+   }
+ }
 
 .container {
   width: 1300px;
