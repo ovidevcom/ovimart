@@ -1,0 +1,39 @@
+.AddCreditCard_container {
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    min-height: 80px;
+}
+
+.AddCreditCard_container h4 {
+    color: red;
+    font-size: 20px;
+}
+
+.AddCreditCard_form_container {
+    box-sizing: border-box;
+    padding: 24px;
+    width: 100%;
+    box-shadow: 0px 0px 7px 3px #bbb;
+}
+
+.Account_empty_card_message {
+    color: gray;
+    size: 2em;
+}
+
+.AddCreditCard_secure_text {
+    color: gray;
+    size: 2em;
+    margin-bottom: 24px;
+}
+
+.AddCreditCard_buttons_container {
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.AddCreditCard_buttons_container div {
+    min-width: 80px;
+    margin-left: 12px;
+}

@@ -1,0 +1,28 @@
+.Modal-container {
+    z-index: 3;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    visibility: visible;
+    opacity: 1;
+    background-color: rgba(17, 17, 17, 0.50);
+    color: white;
+    transition: all 0.25s linear;
+}
+#CloseButton{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    box-sizing: border-box;
+    border: 1px solid #44ddaa;
+    border-radius: 5px;
+}
+.Active {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,202 @@
+body {
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+#layoutContainerWrapper {
+    -webkit-transition: -webkit-transform 0.3s ease;
+    -moz-transition: -moz-transform 0.3s ease;
+    -o-transition: -o-transform 0.3s ease;
+    -ms-transition: -ms-transform 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+#layoutContainerWrapper {
+    clear: both;
+}
+
+input {
+    -webkit-box-shadow: inset 0 1px 0 #ddd;
+    box-shadow: inset 0 1px 0 #ddd;
+    border-radius: 4px;
+    border: 1px solid #c5c5c5;
+    display: inherit;
+    font-size: 1.2em;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    width: 100%;
+}
+
+h4 {
+    display: block;
+    -webkit-margin-before: 1.33em;
+    -webkit-margin-after: 1.33em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+form,
+section {
+    display: block;
+}
+
+section {
+    border-top: 1px solid #eee;
+}
+
+section:before,
+section:after {
+    content: "";
+    display: table;
+    padding: 12px 0;
+}
+
+section:after {
+    clear: both;
+}
+
+section .titles {
+    float: left;
+    width: 50%;
+    margin-bottom: 16px;
+    margin-right: 0px;
+}
+
+label {
+    text-transform: uppercase;
+    color: #aaa;
+    font-size: 13px;
+    font-weight: 600;
+    display: block;
+    border-radius: 2px;
+    margin-bottom: 8px;
+}
+
+.accountView nav {
+    position: relative;
+    z-index: 2;
+    float: right;
+}
+
+.accountView nav a {
+    display: inline-block;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #888;
+    margin-top: 25px;
+    padding: 0 25px;
+    border-right: 1px solid #eee;
+}
+
+.accountView nav a:last-child {
+    padding-right: 10px;
+    border-right: 0;
+}
+.accountView h2 {
+    text-align: left;
+    font-size: 42px;
+    color: #ee4054;
+    margin: 10px 0;
+    font-weight: 100;
+}
+
+.accountView h4 {
+    font-weight: 100;
+    font-size: 2em;
+    margin: 0;
+    font-weight: 100;
+}
+.accountView .titles{
+    float: left;
+    width: 50%;
+    margin-bottom: 16px;
+    margin-right: 0px;
+    font-family: "Gill Sans", 
+        "Gill Sans MT",
+        Calibri, 
+        "Trebuchet MS",
+        sans-serif;
+}
+.invalidText {
+    color: red;
+}
+
+.validationErrorNote {
+    color: red;
+    font-style: italic;
+    font-size: small;
+    height: 20px;
+}
+
+.Button {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px #bbb;
+    width: 100%;
+    min-width: max-content;
+    height: 40px;
+    cursor: pointer;
+}
+
+.saveButton {
+    font-size: 1em;
+    font-weight: 700;
+    width: 25%;
+    display: inline-block;
+}
+
+.Button_secondary {
+    background-color: white;
+    color: #000;
+}
+
+.Button_primary {
+    background: #ee4054;
+    color: #fff;
+}
+
+.Button_is_disabled {
+    background: #f58c98;
+    box-shadow: none;
+}
+
+.Full_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Half_container {
+    display: block;
+    width: 48%;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 800px) {
+    .accountView .rightPanel {
+        float: none;
+        width: 100%;
+    }
+    .accountView section .titles {
+        width: 100%;
+        float: none;
+    }
+    .Full_container {
+        display: block;
+    }
+    .Half_container {
+        display: block;
+        width: 100%;
+        float: none;
+    }
+}
