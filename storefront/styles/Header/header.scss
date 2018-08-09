@@ -1,0 +1,124 @@
+.header{
+
+}
+
+.header-top{
+    background: red;
+    
+}
+
+.header-top-left{
+    padding: 8px 20px;
+    display: flex;
+    flex-direction: row;
+    // justify-content: baseline;
+}
+
+.header-brand{
+    box-sizing: content-box;
+    width: 17%;
+}
+
+.search{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 35%;
+}
+.input-search{
+    width: 90%;
+    height: 34px;
+    // border: 1px solid #56a060;
+    // border-radius: 3px;
+    padding : 10px;
+}
+.search-item{
+    width: 10%;
+    height: 34px;
+    background: #d3b428;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    
+}
+.search-flex{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #d3b428;
+    border-radius: 3px;
+}
+.search-icon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header-account{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left : 40px;
+}
+
+.header-account-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.header-account-row-center{
+    display: flex;
+    flex-direction: row;
+    color: aliceblue;
+}
+
+.account-img{
+        font-size: 30px;
+        justify-items: center;
+        display: inline;
+}
+
+.account-text-col{
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.number-card{
+    position: absolute;
+    // border: 1px solid blue;
+    width:20px;
+    height:20px;
+    right: 0;
+    top: 0;
+    background:white;
+    border-radius: 10px;
+    color: red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+
+}
+
+.number-ab{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.top-card{
+    width: 46px;
+    position: relative;
+}
+
+.header-bottom-left{
+    padding: 10px;
+}
+.header-bottom-left-content{
+    display: flex;
+    flex-direction: row;
+    
+}
