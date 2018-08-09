@@ -103,7 +103,7 @@
 }
 
 .number-ab{
-    font-size: 14px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,4 +112,13 @@
 .top-card{
     width: 46px;
     position: relative;
+}
+
+.header-bottom-left{
+    padding: 10px;
+}
+.header-bottom-left-content{
+    display: flex;
+    flex-direction: row;
+    
 }

@@ -70,7 +70,7 @@ const Header = () => (
                         <i class="fas fa-shopping-cart"></i>
                         {/* <i class="fal fa-shopping-cart"></i> */}
                         <div className="number-card">
-                          <div className="number-ab">0</div>
+                          <div className="number-ab">12</div>
                         </div>
                        </div>
                       </div>
@@ -80,7 +80,11 @@ const Header = () => (
           </div>
       </div>
       <div className="header-bottom">
-
+          <div className="header-bottom-left">
+              <div className="header-bottom-left-content">
+              {/* <i class="fas fa-align-justify"></i> */}
+              </div>
+          </div>
       </div>
     </div>
 )
