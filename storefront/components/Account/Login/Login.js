@@ -5,12 +5,12 @@ export default class Login extends Component {
     state = {
         displayModal: false,
     }
-    showModal = (event) => {
+    showModal = () => {
         this.setState({
             displayModal: true
         })
     }
-    hideModal = (event) => {
+    hideModal = () => {
         this.setState({
             displayModal: false
         })

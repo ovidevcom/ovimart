@@ -142,7 +142,7 @@ export default class CreditCard extends Component {
                     </div>
                     <div className="AddCreditCard_buttons_container">
                         <div className="Button Button_secondary" onClick={this.closeAddCreditCard}>CANCEL</div>
-                        <div id="Save_Credit_Card" className={SaveCreditCardClassName} onClick={isSaveEnable ? closeAddCreditCard : null}>SAVE</div>
+                        <div id="Save_Credit_Card" className={SaveCreditCardClassName} onClick={isSaveEnable ? this.closeAddCreditCard : null}>SAVE</div>
                     </div>
                 </div>
         }
