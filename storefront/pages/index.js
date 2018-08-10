@@ -3,12 +3,25 @@ import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import { AnchorButton, Elevation, Card, Button, Tab, Tabs  } from "@blueprintjs/core";
 import '../styles/style.scss'
+import CustomCard from '../components/Card/Custom-Card'
 
 const Index = (props) => (
   <Layout>
     <div className="container">
       <h1>Batman TV Shows</h1>
 
+      <div className="row-custom" >
+    
+    {props.shows.map(({show,score}) =>(
+     <Link as={`/p/${show.id}`} href={`/post?id=${show.id}`}>
+     <a>
+        <CustomCard {...show}>
+        </CustomCard>
+        </a>
+      </Link>
+      
+    ))}  
+    </div>
 
         <ul>
           {props.shows.map(({show}) => (
