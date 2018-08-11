@@ -18,10 +18,10 @@ export default class AccountInfo extends Component {
 
   componentDidMount() {
     var dataFetched = {
-      firstName: "a",
-      lastName: "a",
-      email: "levanthanh.ptit@gmail.com",
-      contactNumber: "84663777135",
+      firstName: "",
+      lastName: "",
+      email: "",
+      contactNumber: "",
 
     }
     var object = {
@@ -96,12 +96,12 @@ export default class AccountInfo extends Component {
   }
 
 // return TRUE if there are at lest one error
-  checkSubmitErrorStatus = (errors) => {
+  checkSubmitErrorStatus = () => {
     return (
-      errors.firstName == false &&
-      errors.lastName == false &&
-      errors.email == false &&
-      errors.contactNumber == false
+      this.isNameValid(this.state.firstName) &&
+      this.isNameValid(this.state.lastName) &&
+      this.isEmailValid(this.state.email) &&
+      this.isContactNumberValid(this.state.contactNumber)
     )
   }
   updateAccountInfo = () => {
@@ -111,7 +111,7 @@ export default class AccountInfo extends Component {
   }
   render() {
     //Instance Variables for validation form
-    const isSaveEnabled = this.checkSubmitErrorStatus(this.state.errors);
+    const isSaveEnabled = this.checkSubmitErrorStatus();
     var saveButtonClassName = "Button Button_primary";
     //Save button is disable when form invalid
     saveButtonClassName += isSaveEnabled ? "" : " Button_is_disabled";
@@ -148,7 +148,7 @@ export default class AccountInfo extends Component {
             </div>
             <div>
               <label htmlFor="email">Email address</label>
-              <input type="email" name="email" id="email" onChange={this.editEmailChange} value={this.state.email} disabled={!this.state.onEdit} />
+              <input type="email" name="email" id="email" onChange={this.handleEmailChange} value={this.state.email} disabled={!this.state.onEdit} />
               <div className="validationErrorNote">
                 {this.state.errors.email &&
                   <span>

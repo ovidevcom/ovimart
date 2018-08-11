@@ -35,20 +35,23 @@ export default class ChangePassword extends Component {
         })
     }
     isPasswordValid = (str) => {
-        return true
+        return /(?=.*\d)(?=.*[a-zA-Z]).{8,}/.test(str);
     }
     isConfirmPasswordValid = (str) => {
-        if(this.state.newPassword.length==0) return false;
+        if (this.state.newPassword.length == 0) return false;
         return (this.state.newPassword == str)
     }
     checkSubmitErrorStatus = () => {
-        return (this.isPasswordValid(this.state.newPassword) && 
-        this.isConfirmPasswordValid(this.state.confirmPassword))
+        return (this.state.currentPassword.length != 0 &&
+            this.isPasswordValid(this.state.newPassword) &&
+            this.state.currentPassword != this.state.confirmPassword &&
+            this.isConfirmPasswordValid(this.state.confirmPassword)
+        )
     }
     render() {
         const isChangePasswordButtonEnable = this.checkSubmitErrorStatus();
         var ChangePasswordButtonClassName = "Button Button_primary";
-        ChangePasswordButtonClassName += isChangePasswordButtonEnable?"":" Button_is_disabled";
+        ChangePasswordButtonClassName += isChangePasswordButtonEnable ? "" : " Button_is_disabled";
         return (
             <section>
                 <div className="titles">
@@ -69,15 +72,15 @@ export default class ChangePassword extends Component {
 
                                 <input type="password" className="Input_input" name="newPassword" onChange={this.handleNewPasswordChange} value={this.state.newPassword} placeholder="Minimum 8 characters" />
                                 <div className="validationErrorNote">
-                                {this.state.errors.newPassword &&
-                                <span>password invalid</span>}
+                                    {this.state.errors.newPassword &&
+                                        <span>password invalid</span>}
                                 </div>
                             </div>
                             <div className="Half_container">
                                 <label htmlFor="confirm_password">Confirm Password</label>
                                 <input type="password" className="Input_input" name="confirmPassword" onChange={this.handleConfirmPasswordChange} value={this.state.confirmPassword} placeholder="Minimum 8 characters" />
                                 <div className="validationErrorNote">
-                                    {this.state.errors.confirmPassword && 
+                                    {this.state.errors.confirmPassword &&
                                         <span>The two passwords do not match</span>
                                     }
                                 </div>

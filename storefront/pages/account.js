@@ -8,14 +8,16 @@ import Login from "../components/Account/Login/Login";
 export default () => (
   <Layout>
     <section id="layoutContainerWrapper">
-    <Login/>
+      <Login />
       <section className="accountView">
-      <h2>My Account</h2>
-        <nav>
-          <a href="/orders">My Orders</a>
-          <a className="signoutBtn">Log Out</a>
-        </nav>
-        
+
+        <section className="first">
+          <h2>My Account</h2>
+          <nav>
+            <a href="/orders">My Orders</a>
+            <a className="signoutBtn">Log Out</a>
+          </nav>
+        </section>
         <AccountInfo />
         <CreditCard />
         <ChangePassword />
