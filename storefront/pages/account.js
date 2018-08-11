@@ -3,16 +3,19 @@ import "../components/Account/Account.scss"
 import AccountInfo from "../components/Account/AccountInfo/AccountInfo"
 import CreditCard from "../components/Account/CreditCard/CreditCard"
 import ChangePassword from "../components/Account/ChangePassword/ChangePassword"
+import Login from "../components/Account/Login/Login";
 
 export default () => (
   <Layout>
     <section id="layoutContainerWrapper">
+    <Login/>
       <section className="accountView">
+      <h2>My Account</h2>
         <nav>
           <a href="/orders">My Orders</a>
           <a className="signoutBtn">Log Out</a>
         </nav>
-        <h2>My Account</h2>
+        
         <AccountInfo />
         <CreditCard />
         <ChangePassword />
