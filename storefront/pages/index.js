@@ -4,10 +4,12 @@ import fetch from 'isomorphic-unfetch'
 import { AnchorButton, Elevation, Card, Button, Tab, Tabs  } from "@blueprintjs/core";
 import '../styles/style.scss'
 import CustomCard from '../components/Card/Custom-Card'
+import Category from '../components/Category/Category'
 
 const Index = (props) => (
   <Layout>
     <div className="container">
+      <Category />
       <h1>Batman TV Shows</h1>
 
       <div className="row-custom" >
