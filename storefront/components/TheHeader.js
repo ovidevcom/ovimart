@@ -70,7 +70,7 @@ const Header = () => (
                         <i class="fas fa-shopping-cart"></i>
                         {/* <i class="fal fa-shopping-cart"></i> */}
                         <div className="number-card">
-                          <div className="number-ab">0</div>
+                          <div className="number-ab">12</div>
                         </div>
                        </div>
                       </div>
