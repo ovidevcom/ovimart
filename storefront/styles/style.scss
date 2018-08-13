@@ -22,6 +22,7 @@ button:focus , a:focus, select:focus
   display: flex;
   flex-wrap: wrap;
   padding: 10px;
+  justify-content: center;
  }
  
  @media screen and (max-width : 670px){
