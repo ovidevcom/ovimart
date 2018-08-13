@@ -29,9 +29,13 @@ const Header = () => (
     <div className="header">
       <div className="header-top">
           <div className="header-top-left">
-              <div className="header-brand">
-                <img src="/static/images/logo-eshop.png" width="100%"/>
-              </div>
+            <Link as="/">
+              <a className="brand-link"> 
+                  <div className="header-brand">
+                    <img src="/static/images/logo-eshop.png" width="100%"/>
+                  </div>
+              </a>
+            </Link>
               <div className="search">
                 <div className="search-flex">
                   <input placeholder="Search to Card,Product,etc..." className="input-search"/>
@@ -98,7 +102,8 @@ const Header = () => (
                 </div>
               </a>
             </Link>
-
+            <Link as="/cart">
+              <a>
                 <div className="header-account">
                   <div className="header-account-row">
                     <div className="header-account-row-center">
@@ -114,6 +119,8 @@ const Header = () => (
                     </div>
                   </div>
               </div>
+              </a>
+            </Link>
           </div>
       </div>
       <div className="header-bottom">

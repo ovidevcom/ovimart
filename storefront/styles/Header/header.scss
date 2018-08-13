@@ -16,9 +16,11 @@
 
 .header-brand{
     box-sizing: content-box;
+    width: 100%;
+}
+.brand-link{
     width: 17%;
 }
-
 .search{
     margin-left: 40px;
     display: flex;
@@ -159,6 +161,7 @@
     color: red;
     border-bottom: 7px solid red;
     text-decoration: none;
+    text-align: center;
 }
 
 .link-cate > a:hover{
@@ -166,6 +169,7 @@
 }
 .link-cate:hover{
     text-decoration: none;
+    text-align: center; 
 }
 
 .today-deal div{
