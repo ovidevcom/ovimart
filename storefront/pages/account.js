@@ -5,23 +5,32 @@ import CreditCard from "../components/Account/CreditCard/CreditCard"
 import ChangePassword from "../components/Account/ChangePassword/ChangePassword"
 import LoginAndSignUp from "../components/Account/LoginAndSignUp/LoginAndSignUp";
 
-export default () => (
-  <Layout>
-    <section id="layoutContainerWrapper">
-      <LoginAndSignUp/>
-      <section className="accountView">
+import React, { Component } from 'react'
 
-        <section className="first">
-          <h2>My Account</h2>
-          <nav>
-            <a href="/orders">My Orders</a>
-            <a className="signoutBtn">Log Out</a>
-          </nav>
+export default class accountPage extends Component {
+  signOut = () => {
+    alert("Sign out success.")
+  }
+  render() {
+    return (
+      <Layout>
+      <section id="layoutContainerWrapper">
+        <LoginAndSignUp />
+        <section className="accountView">
+
+          <section className="first">
+            <h2>My Account</h2>
+            <nav>
+              <a href="/orders">My Orders</a>
+              <a href="/" className="signoutBtn" onClick={this.signOut}>Log Out</a>
+            </nav>
+          </section>
+          <AccountInfo />
+          <CreditCard />
+          <ChangePassword />
         </section>
-        <AccountInfo />
-        <CreditCard />
-        <ChangePassword />
       </section>
-    </section>
-  </Layout>
-)
+    </Layout>
+    )
+  }
+}
