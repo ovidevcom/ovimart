@@ -39,14 +39,15 @@
 }
 .cardContainer{
     display: block;
+    width: 620px;
 }
 .cardLayout{
     box-sizing: content-box;
     // width: 50%;
-    margin : 10px;
+    margin : 2%;
     display: inline-block;
     border: 0.1px solid rgb(224, 210, 210);
-    width: 620px;
+    width: 96%;
     height: 420px;
     
 }

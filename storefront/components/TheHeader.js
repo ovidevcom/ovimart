@@ -1,5 +1,30 @@
 import Link from 'next/link'
 import './../styles/Header/header.scss'
+
+var data = [
+  {name : 'Today\'s Deals', url :'/today-deals'},
+  {name : 'Best Seller', url :'best-seller'},
+  {name : 'Club eShop', url :'club-eshop'},
+  {name : 'Marketplace Deals',url :'marketplace-deals'},
+  {name : 'Outlets',url :'outlets'},
+]
+var data_right =[
+  {name : 'Affiliate Program', url :'/affiliate-program'},
+  {name : 'FAQs', url :'/faqs'},
+]
+
+const Cate = (props) =>(
+  <Link as={props.url} className="link-cate">
+    <a className="link-cate">
+      <div className="today-deal">
+      <div>
+        {props.name}
+      </div>
+    </div>
+  </a>
+ </Link>
+)
+
 const Header = () => (
     <div className="header">
       <div className="header-top">
@@ -17,50 +42,62 @@ const Header = () => (
                   </div>
                 </div>
               </div>
-              <div className="header-account">
-                  <div className="header-account-row">
-                    <div className="header-account-row-center">
-                      <div className="account-img">
-                      <i class="far fa-user-circle" width="100%"></i>
+              <Link as="/account">
+                <a className="link-cate">
+                  <div className="header-account">
+                      <div className="header-account-row">
+                        <div className="header-account-row-center">
+                          <div className="account-img">
+                          <i class="far fa-user-circle" width="100%"></i>
+                          </div>
+                          <div className="account-text-col">
+                            <div className="account-text">
+                              My Account
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="account-text-col">
-                        <div className="account-text">
-                          My Account
+                  </div>
+                </a>
+            </Link>
+
+             <Link as="/favorites">
+                <a className="link-cate">
+                <div className="header-account">
+                    <div className="header-account-row">
+                      <div className="header-account-row-center">
+                        <div className="account-img">
+                        <i class="far fa-heart"></i>
+                        </div>
+                        <div className="account-text-col">
+                          <div className="account-text">
+                            My Favorites
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-              </div>
+                </div>
+              </a>
+            </Link>
 
-              <div className="header-account">
-                  <div className="header-account-row">
-                    <div className="header-account-row-center">
-                      <div className="account-img">
-                      <i class="far fa-heart"></i>
-                      </div>
-                      <div className="account-text-col">
-                        <div className="account-text">
-                          My Favorites
+            <Link as="/help">
+              <a className="link-cate">
+                <div className="header-account">
+                    <div className="header-account-row">
+                      <div className="header-account-row-center">
+                        <div className="account-img">
+                        <i class="far fa-question-circle"></i>
+                        </div>
+                        <div className="account-text-col">
+                          <div className="account-text">
+                            Help Center
+                          </div>  
                         </div>
                       </div>
                     </div>
-                  </div>
-              </div>
-
-              <div className="header-account">
-                  <div className="header-account-row">
-                    <div className="header-account-row-center">
-                      <div className="account-img">
-                      <i class="far fa-question-circle"></i>
-                      </div>
-                      <div className="account-text-col">
-                        <div className="account-text">
-                          Help Center
-                        </div>  
-                      </div>
-                    </div>
-                  </div>
-              </div>
+                </div>
+              </a>
+            </Link>
 
                 <div className="header-account">
                   <div className="header-account-row">
@@ -89,46 +126,16 @@ const Header = () => (
                   </div>
                   <i class="fas fa-angle-down"></i>
                 </div>
-                <div className="today-deal">
-                 <div>
-                    Today's Deals
-                 </div>
-                </div>
-                <div className="today-deal">
-                 <div>
-                    Best Seller
-                 </div>
-                </div>
-                <div className="today-deal">
-                 <div>
-                    Club eShop
-                 </div>
-                </div>
-                <div className="today-deal">
-                 <div>
-                    Marketplace Deals
-                 </div>
-                </div>
-                <div className="today-deal">
-                 <div>
-                    Outlets
-                 </div>
-                </div>
+                {data.map(element =>(
+                  <Cate {...element}/>
+                ))}
               </div>
           </div>
           <div className="header-bottom-right">
             <div className="header-bottom-right-content">
-              <div className="today-deal">
-                  <div>
-                      Affiliate Program
-                  </div>
-                </div>
-            
-            <div className="today-deal">
-                  <div>
-                      AFQs  
-                  </div>
-            </div>
+              {data_right.map(element =>(
+                <Cate{...element}/>
+              ))}
             </div>
           </div>
       </div>
