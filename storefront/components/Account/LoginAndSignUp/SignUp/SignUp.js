@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import "../../Account.scss"
+import Validation from "../../Validation"
 export default class SignUp extends Component {
     state = {
         email: "",
@@ -12,33 +13,27 @@ export default class SignUp extends Component {
         }
     }
     handleEmailChange = (event) => {
+        var errors = this.state.errors;
+        errors.email = Validation.isEmailValid(event.target.value)
         this.setState({
             email: event.target.value,
-            errors: {
-                email: this.isEmailValid(event.target.value),
-                newPassword: this.state.errors.newPassword,
-                confirmPassword: this.state.errors.confirmPassword
-            }
+            errors: errors
         })
     }
     handleNewPasswordChange = (event) => {
+        var errors = this.state.errors;
+        errors.newPassword = Validation.isPasswordValid(event.target.value)
         this.setState({
             newPassword: event.target.value,
-            errors: {
-                email: this.errors.state.email,
-                newPassword: this.isPasswordValid(event.target.value),
-                confirmPassword: this.state.errors.confirmPassword,
-            }
+            errors: errors
         })
     }
     handleConfirmPasswordChange = (event) => {
+        var errors = this.state.errors;
+        errors.confirmPassword = Validation.isConfirmPasswordValid(this.state.newPassword,event.target.value)
         this.setState({
             confirmPassword: event.target.value,
-            errors: {
-                email: this.errors.state.email,
-                newPassword: this.state.errors.newPassword,
-                confirmPassword: this.isConfirmPasswordValid(event.target.value),
-            }
+            errors: errors
         })
     }
     isEmailValid = (str) => {
@@ -67,25 +62,19 @@ export default class SignUp extends Component {
                 <div>
                     <input type="email" placeholder="Email Address" value={this.state.email} onChange={this.handleEmailChange} />
                     <div className="validationErrorNote">
-                        <span>
-                            {this.state.errors.email}
-                        </span>
+                        {this.state.errors.email}
                     </div>
                 </div>
                 <div>
                     <input type="password" placeholder="Password" value={this.state.newPassword} onChange={this.handleNewPasswordChange} />
                     <div className="validationErrorNote">
-                        <span>
-                            {this.state.errors.newPassword}
-                        </span>
+                        {this.state.errors.newPassword}
                     </div>
                 </div>
                 <div>
                     <input type="password" placeholder="Confirm password" value={this.state.confirmPassword} onChange={this.handleConfirmPasswordChange} />
                     <div className="validationErrorNote">
-                        <span>
-                            {this.state.errors.confirmPassword}
-                        </span>
+                        {this.state.errors.confirmPassword}
                     </div>
                 </div>
                 <div>

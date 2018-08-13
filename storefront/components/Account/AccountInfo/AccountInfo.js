@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import "./AccountInfo.scss"
 import "../Account.scss"
+import Validation from "../Validation"
 export default class AccountInfo extends Component {
   state = {
     firstName: "",
@@ -8,10 +9,10 @@ export default class AccountInfo extends Component {
     email: "",
     contactNumber: "",
     errors: {
-      firstName: false,
-      lastName: false,
-      email: false,
-      contactNumber: false,
+      firstName: "",
+      lastName: "",
+      email: "",
+      contactNumber: "",
     },
     onEdit: null
   }
@@ -41,67 +42,45 @@ export default class AccountInfo extends Component {
     })
   }
   handleFirstNameChange = (event) => {
+    var errors = this.state.errors;
+    errors.firstName = Validation.isNameValid(event.target.value)
     this.setState({
       firstName: event.target.value,
-      errors: {
-        firstName: !this.isNameValid(event.target.value),
-        lastName: this.state.errors.lastName,
-        email: this.state.errors.email,
-        contactNumber: this.state.errors.contactNumber,
-      }
+      errors: errors
     })
   }
   handleLastNameChange = (event) => {
+    var errors = this.state.errors;
+    errors.lastName = Validation.isNameValid(event.target.value)
     this.setState({
       lastName: event.target.value,
-      errors: {
-        firstName: this.state.errors.firstName,
-        lastName: !this.isNameValid(event.target.value),
-        email: this.state.errors.email,
-        contactNumber: this.state.errors.contactNumber,
-      }
+      errors: errors
     })
   }
   handleEmailChange = (event) => {
+    var errors = this.state.errors;
+    errors.email = Validation.isEmailValid(event.target.value)
     this.setState({
       email: event.target.value,
-      errors: {
-        firstName: this.state.errors.firstName,
-        lastName: this.state.errors.lastName,
-        email: !this.isEmailValid(event.target.value),
-        contactNumber: this.state.errors.contactNumber,
-
-      }
+      errors: errors
     })
   }
   handleContactNumberChange = (event) => {
+    var errors = this.state.errors;
+    errors.contactNumber = Validation.isContactNumberValid(event.target.value)
     this.setState({
       contactNumber: event.target.value,
-      errors: {
-        firstName: this.state.errors.firstName,
-        lastName: this.state.errors.lastName,
-        email: this.state.errors.email,
-        contactNumber: !this.isContactNumberValid(event.target.value),
-      }
+      errors: errors
     })
-  }
-  isNameValid = (str) => {
-    return (/^[A-Za-z]*$/.test(str));
-  }
-  isEmailValid = (str) => {
-    return (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(str));
-  }
-  isContactNumberValid = (str) => {
-    return (/(?:(?:\+?1\s*(?:[.-]\s*)?)?(?:(\s*([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]‌​)\s*)|([2-9]1[02-9]|[2-9][02-8]1|[2-9][02-8][02-9]))\s*(?:[.-]\s*)?)([2-9]1[02-9]‌​|[2-9][02-9]1|[2-9][02-9]{2})\s*(?:[.-]\s*)?([0-9]{4})(?:\s*(?:#|x\.?|ext\.?|extension)\s*(\d+))?$/.test(str));
   }
 
 // return TRUE if there are at lest one error
   checkSubmitErrorStatus = () => {
     return (
-      this.isNameValid(this.state.firstName) &&
-      this.isNameValid(this.state.lastName) &&
-      this.isEmailValid(this.state.email) &&
-      this.isContactNumberValid(this.state.contactNumber)
+      Validation.isNameValid(this.state.firstName) == "" &&
+      Validation.isNameValid(this.state.lastName) == "" &&
+      Validation.isEmailValid(this.state.email) == "" &&
+      Validation.isContactNumberValid(this.state.contactNumber) == ""
     )
   }
   updateAccountInfo = () => {
@@ -127,22 +106,14 @@ export default class AccountInfo extends Component {
                 <label htmlFor="first_name">First Name</label>
                 <input type="text" name="firstName" id="first_name" onChange={this.handleFirstNameChange} value={this.state.firstName} maxLength="25" disabled={!this.state.onEdit} />
                 <div className="validationErrorNote">
-                  {this.state.errors.firstName &&
-                    <span>
-                      First Name is not valid
-                    </span>
-                  }
+                  {this.state.errors.firstName}
                 </div>
               </div>
               <div className="Half_container">
                 <label htmlFor="last_name">Last Name</label>
                 <input type="text" name="lastName" id="last_name" onChange={this.handleLastNameChange} value={this.state.lastName} maxLength="25" disabled={!this.state.onEdit} />
                 <div className="validationErrorNote">
-                  {this.state.errors.lastName &&
-                    <span>
-                      Last Name is not valid
-                    </span>
-                  }
+                  {this.state.errors.lastName}
                 </div>
               </div>
             </div>
@@ -150,28 +121,20 @@ export default class AccountInfo extends Component {
               <label htmlFor="email">Email address</label>
               <input type="email" name="email" id="email" onChange={this.handleEmailChange} value={this.state.email} disabled={!this.state.onEdit} />
               <div className="validationErrorNote">
-                {this.state.errors.email &&
-                  <span>
-                    Email address is not valid
-                  </span>
-                }
+                {this.state.errors.email}
               </div>
             </div>
             <div>
               <label htmlFor="contact_number">Contact Number</label>
               <input type="text" name="contactNumber" id="contact_number" onChange={this.handleContactNumberChange} value={this.state.contactNumber} disabled={!this.state.onEdit} />
               <div className="validationErrorNote">
-                {this.state.errors.contactNumber &&
-                  <span>
-                    Contact Number is not valid
-                  </span>
-                }
+                {this.state.errors.contactNumber}
               </div>
             </div>
           </div>
           {this.state.onEdit ?
             <div className="saveButton">
-              <div onClick={isSaveEnabled?this.updateAccountInfo:null} className={saveButtonClassName}>SAVE</div>
+              <div onClick={isSaveEnabled ? this.updateAccountInfo : null} className={saveButtonClassName}>SAVE</div>
             </div>
             :
             <div className="saveButton">

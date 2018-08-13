@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import "./CreditCard.scss"
 import "../Account.scss"
-
+import Validation from "../Validation"
 export default class CreditCard extends Component {
     state = {
         name: "",
@@ -10,10 +10,10 @@ export default class CreditCard extends Component {
         expiry: "",
         displayAddCreditCard: false,
         errors: {
-            name: false,
-            cardNumber: false,
-            cvv: false,
-            expiry: false,
+            name: "",
+            cardNumber: "",
+            cvv: "",
+            expiry: "",
         }
     }
     openAddCreditCard = () => {
@@ -27,74 +27,40 @@ export default class CreditCard extends Component {
         })
     }
     handleNameChange = (event) => {
+        var errors = this.state.errors;
+        errors.name = Validation.isNameValid(event.target.value);
         this.setState({
             name: event.target.value,
-            errors: {
-                name: !this.isNameValid(event.target.value),
-                cardNumber: this.state.errors.cardNumber,
-                cvv: this.state.errors.cvv,
-                expiry: this.state.errors.expiry,
-            }
+            errors: errors
         })
     }
     handleCardNumberChange = (event) => {
+        var errors = this.state.errors;
+        errors.cardNumber = Validation.isCardNumberValid(event.target.value);
         this.setState({
             cardNumber: event.target.value,
-            errors: {
-                name: this.state.errors.name,
-                cardNumber: !this.isCardNumberValid(event.target.value),
-                cvv: this.state.errors.cvv,
-                expiry: this.state.errors.expiry,
-            }
+            errors: errors
         })
     }
     handleCvvChange = (event) => {
+        var errors = this.state.errors;
+        errors.cvv = Validation.isCvvValid(event.target.value);
         this.setState({
             cvv: event.target.value,
-            errors: {
-                name: this.state.errors.name,
-                cardNumber: this.state.errors.cardNumber,
-                cvv: !this.isCvvValid(event.target.value),
-                expiry: this.state.errors.expiry,
-            }
+            errors: errors
         })
     }
     handleExpiryChange = (event) => {
+        var errors = this.state.errors;
+        errors.expiry = Validation.isDateValid(event.target.value)
         this.setState({
             expiry: event.target.value,
-            errors: {
-                name: this.state.errors.name,
-                cardNumber: this.state.errors.cardNumber,
-                cvv: this.state.errors.cvv,
-                expiry: !this.isDateValid(event.target.value),
-            }
+            errors: errors
         })
     }
-    isDateValid = (dateString) => {
-        // First check for the pattern
-        if (!(/^\d{1,2}\/\d{2}$/.test(dateString)))
-            return false;
-        // Parse the date parts to integers
-        var parts = dateString.split("/");
-        var month = parseInt(parts[0], 10);
-        var year = parseInt(parts[1], 10);
-        // Check the ranges of month and year
-        if (year < 0 || month == 0 || month > 12)
-            return false;
-        return true;
-    }
-    isNameValid = (str) => {
-        return (/^[A-Za-z]*$/.test(str))
-    }
-    isCardNumberValid = (str) => {
-        return (/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/.test(str))
-    }
-    isCvvValid = (srt) => {
-        return (/^[0-9]{3,4}$/.test(srt))
-    }
     checkSubmitErrorStatus = () => {
-        return (this.isNameValid(this.state.name) && this.isCvvValid(this.state.cvv) &&
-            this.isDateValid(this.state.expiry) && this.isCardNumberValid(this.state.cardNumber))
+        return (Validation.isNameValid(this.state.name)=="" && Validation.isCvvValid(this.state.cvv)=="" &&
+            Validation.isDateValid(this.state.expiry)=="" && Validation.isCardNumberValid(this.state.cardNumber))==""
     }
     render() {
         const isSaveEnable = this.checkSubmitErrorStatus();
@@ -111,7 +77,7 @@ export default class CreditCard extends Component {
                         <div>
                             <input id="holderName" type="text" className="Input_input" name="holderName" onChange={this.handleNameChange} value={this.state.name} placeholder="As shown on card" />
                             <div className="validationErrorNote">
-                            {this.state.errors.name&&<span>Name is not valid</span>}
+                            {this.state.errors.name}
                             </div>
                         </div>
                     </div>
@@ -120,7 +86,7 @@ export default class CreditCard extends Component {
                         <input id="accountNumber" type="tel" className="Input_input" name="accountNumber" onChange={this.handleCardNumberChange} value={this.state.cardNumber} placeholder="Minimum 15 digits"
                             pattern="[0-9]*" />
                         <div className="validationErrorNote">
-                            {this.state.errors.cardNumber&&<span>Card number is not valid</span>}
+                            {this.state.errors.cardNumber}
                         </div>
                     </div>
                     <div className="AddCreditCard_cvv_exp_container Full_container">
@@ -128,7 +94,7 @@ export default class CreditCard extends Component {
                             <label htmlFor="cvv">CVV</label>
                             <input id="cvv" type="tel" className="Input_input" name="cvv" onChange={this.handleCvvChange} value={this.state.cvv} placeholder="CVV" pattern="[0-9]*" />
                             <div className="validationErrorNote">
-                            {this.state.errors.cvv&&<span>CVV is not valid</span>}
+                            {this.state.errors.cvv}
                             </div>
                         </div>
                         <div className="AddCreditCard_input_container Half_container">
@@ -136,7 +102,7 @@ export default class CreditCard extends Component {
                             <input id="expiry" type="tel" className="Input_input" name="expiry" onChange={this.handleExpiryChange} value={this.state.expiry} placeholder="MM / YY"
                                 pattern="[0-9/]*" />
                             <div className="validationErrorNote">
-                            {this.state.errors.expiry&&<span>Expiry is not valid</span>}
+                            {this.state.errors.expiry}
                             </div>
                         </div>
                     </div>

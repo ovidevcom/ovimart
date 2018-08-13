@@ -1,51 +1,48 @@
 import React, { Component } from 'react'
 import "../Account.scss"
 import "./ChangePassword.scss"
+import Validation from "../Validation"
 export default class ChangePassword extends Component {
     state = {
         currentPassword: "",
         newPassword: "",
         confirmPassword: "",
         errors: {
-            newPassword: false,
-            confirmPassword: false,
+            currentPassword: "",
+            newPassword: "",
+            confirmPassword: "",
         }
     }
     handleCurrentPasswordChange = (event) => {
+        var errors = this.state.errors;
+        errors.currentPassword = Validation.isPasswordValid(event.target.value);
         this.setState({
             currentPassword: event.target.value,
+            errors: errors
         })
     }
     handleNewPasswordChange = (event) => {
+        var errors = this.state.errors;
+        errors.newPassword = Validation.isPasswordValid(event.target.value),
         this.setState({
             newPassword: event.target.value,
-            errors: {
-                newPassword: !this.isPasswordValid(event.target.value),
-                confirmPassword: this.state.errors.confirmPassword,
-            }
+            errors: errors
         })
     }
     handleConfirmPasswordChange = (event) => {
+        var errors = this.state.errors;
+        errors.confirmPassword = Validation.isConfirmPasswordValid(this.state.newPassword,event.target.value)
         this.setState({
             confirmPassword: event.target.value,
-            errors: {
-                newPassword: this.state.errors.newPassword,
-                confirmPassword: !this.isConfirmPasswordValid(event.target.value),
-            }
+            errors: errors
         })
     }
-    isPasswordValid = (str) => {
-        return /(?=.*\d)(?=.*[a-zA-Z]).{8,}/.test(str);
-    }
-    isConfirmPasswordValid = (str) => {
-        if (this.state.newPassword.length == 0) return false;
-        return (this.state.newPassword == str)
-    }
+  
     checkSubmitErrorStatus = () => {
         return (this.state.currentPassword.length != 0 &&
-            this.isPasswordValid(this.state.newPassword) &&
+            Validation.isPasswordValid(this.state.newPassword) &&
             this.state.currentPassword != this.state.confirmPassword &&
-            this.isConfirmPasswordValid(this.state.confirmPassword)
+            Validation.isConfirmPasswordValid(this.state.newPassword,this.state.confirmPassword)
         )
     }
     render() {
@@ -63,7 +60,9 @@ export default class ChangePassword extends Component {
                             <div className="Half_container">
                                 <label htmlFor="old_password">Current Password</label>
                                 <input type="password" className="Input_input" name="oldPassword" onChange={this.handleCurrentPasswordChange} value={this.state.currentPassword} placeholder="Minimum 8 characters" />
-                                <div className="validationErrorNote"></div>
+                                <div className="validationErrorNote">
+                                    {this.state.errors.currentPassword}
+                                </div>
                             </div>
                         </div>
                         <div className=" Full_container">
@@ -72,17 +71,14 @@ export default class ChangePassword extends Component {
 
                                 <input type="password" className="Input_input" name="newPassword" onChange={this.handleNewPasswordChange} value={this.state.newPassword} placeholder="Minimum 8 characters" />
                                 <div className="validationErrorNote">
-                                    {this.state.errors.newPassword &&
-                                        <span>password invalid</span>}
+                                    {this.state.errors.newPassword}
                                 </div>
                             </div>
                             <div className="Half_container">
                                 <label htmlFor="confirm_password">Confirm Password</label>
                                 <input type="password" className="Input_input" name="confirmPassword" onChange={this.handleConfirmPasswordChange} value={this.state.confirmPassword} placeholder="Minimum 8 characters" />
                                 <div className="validationErrorNote">
-                                    {this.state.errors.confirmPassword &&
-                                        <span>The two passwords do not match</span>
-                                    }
+                                    {this.state.errors.confirmPassword}
                                 </div>
                             </div>
                         </div>
