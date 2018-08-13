@@ -103,7 +103,7 @@
 }
 
 .number-ab{
-    font-size: 14px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -112,4 +112,64 @@
 .top-card{
     width: 46px;
     position: relative;
+}
+.header-bottom{
+    padding-top: 5px;
+    border-bottom: 1px solid red;
+    display: flex;
+    flex-wrap: wrap;
+    // align-items: baseline;
+}
+.header-bottom-left{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+    
+}
+.header-bottom-left-content{
+    display: flex;
+    flex-direction: row;
+}
+.header-categories{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 5px;
+}
+.header-categories-text{
+    font-weight: 650;
+    
+}
+.today-deal{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 40px;
+    height: 100%;
+}
+.today-deal:active{
+    border-bottom: 5px solid red;
+}
+
+.today-deal:hover{
+    color: red;
+    border-bottom: 5px solid red;
+}
+
+.today-deal div{
+    font-weight: 650;
+}
+
+.header-bottom-right{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    // justify-content: center;
+}
+.header-bottom-right-content{
+    display: flex;
+    flex-direction: row;
 }

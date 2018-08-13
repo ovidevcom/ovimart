@@ -70,7 +70,7 @@ const Header = () => (
                         <i class="fas fa-shopping-cart"></i>
                         {/* <i class="fal fa-shopping-cart"></i> */}
                         <div className="number-card">
-                          <div className="number-ab">0</div>
+                          <div className="number-ab">12</div>
                         </div>
                        </div>
                       </div>
@@ -80,7 +80,57 @@ const Header = () => (
           </div>
       </div>
       <div className="header-bottom">
-
+          <div className="header-bottom-left">
+              <div className="header-bottom-left-content">
+                <div className="header-categories">
+                  <i class="fas fa-align-justify"></i>
+                  <div className="header-categories-text">
+                     &nbsp; Browser by Category &nbsp;
+                  </div>
+                  <i class="fas fa-angle-down"></i>
+                </div>
+                <div className="today-deal">
+                 <div>
+                    Today's Deals
+                 </div>
+                </div>
+                <div className="today-deal">
+                 <div>
+                    Best Seller
+                 </div>
+                </div>
+                <div className="today-deal">
+                 <div>
+                    Club eShop
+                 </div>
+                </div>
+                <div className="today-deal">
+                 <div>
+                    Marketplace Deals
+                 </div>
+                </div>
+                <div className="today-deal">
+                 <div>
+                    Outlets
+                 </div>
+                </div>
+              </div>
+          </div>
+          <div className="header-bottom-right">
+            <div className="header-bottom-right-content">
+              <div className="today-deal">
+                  <div>
+                      Affiliate Program
+                  </div>
+                </div>
+            
+            <div className="today-deal">
+                  <div>
+                      AFQs  
+                  </div>
+            </div>
+            </div>
+          </div>
       </div>
     </div>
 )
