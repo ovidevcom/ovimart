@@ -172,16 +172,21 @@ label {
 }
 
 .Button_secondary {
-    background-color: white;
+    background-color: #f8f8f8;
     color: #000;
 }
-
+.Button_secondary:hover{
+    background-color: #fff;
+}
 .Button_primary {
     background: #ee4054;
     color: #fff;
 }
+.Button_primary:hover{
+    background: red;
+}
 
-.Button_is_disabled {
+.Button_is_disabled, .Button_is_disabled:hover{
     background: #f58c98;
     box-shadow: none;
 }

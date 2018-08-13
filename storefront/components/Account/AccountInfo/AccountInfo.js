@@ -46,7 +46,7 @@ export default class AccountInfo extends Component {
     errors.firstName = Validation.isNameValid(event.target.value)
     this.setState({
       firstName: event.target.value,
-      errors: errors
+      errors: errors  
     })
   }
   handleLastNameChange = (event) => {

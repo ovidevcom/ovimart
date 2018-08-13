@@ -46,7 +46,7 @@ export default class LoginAndSignUp extends Component {
             </div>
         return (
             <div className="Login-Container">
-                <button onClick={this.showModal}>login</button>
+                <div onClick={this.showModal}>{this.props.children}</div>
                 {this.state.displayModal &&
                     <Modal OnClickHandle={this.hideModal} CallBackHandle={this.funcHandle}>
                         {LoginContent}

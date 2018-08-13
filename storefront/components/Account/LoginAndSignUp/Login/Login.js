@@ -58,7 +58,7 @@ export default class Login extends Component {
                     <div className={"Button Button_primary" + `${this.checkSubmitErrorStatus() ? " Button_is_disabled" : ""}`}>LOGIN</div>
                 </div>
                 <div>
-                    <div className="Button">FORGOT PASSWORD?</div>
+                    <div className="Button Button_secondary">FORGOT PASSWORD?</div>
                 </div>
             </div>
 
