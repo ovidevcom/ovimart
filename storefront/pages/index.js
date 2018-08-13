@@ -10,6 +10,7 @@ const Index = (props) => (
   <Layout>
     <div className="container">
       <Category />
+      <br/>
       <h1>Batman TV Shows</h1>
 
       <div className="row-custom" >

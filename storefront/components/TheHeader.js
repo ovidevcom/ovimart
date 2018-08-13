@@ -126,7 +126,7 @@ const Header = () => (
             
             <div className="today-deal">
                   <div>
-                      AFQs  
+                      FAQs  
                   </div>
             </div>
             </div>

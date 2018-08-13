@@ -48,7 +48,6 @@
   position: absolute;
   list-style: none;
   top: -1px;
-  bottom: -1px;
   left: 143px;
   width: 800px;
   min-height: 100%;
@@ -97,7 +96,7 @@
   padding: 0 0 15px 0;
   color: black;
 }
-.menu .col1 ul li a:hover {
+.menu .col ul li a:hover {
   color: red;
   text-decoration: none;
 }
