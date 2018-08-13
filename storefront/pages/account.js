@@ -3,12 +3,12 @@ import "../components/Account/Account.scss"
 import AccountInfo from "../components/Account/AccountInfo/AccountInfo"
 import CreditCard from "../components/Account/CreditCard/CreditCard"
 import ChangePassword from "../components/Account/ChangePassword/ChangePassword"
-import Login from "../components/Account/Login/Login";
+import LoginAndSignUp from "../components/Account/LoginAndSignUp/LoginAndSignUp";
 
 export default () => (
   <Layout>
     <section id="layoutContainerWrapper">
-      <Login />
+      <LoginAndSignUp/>
       <section className="accountView">
 
         <section className="first">
