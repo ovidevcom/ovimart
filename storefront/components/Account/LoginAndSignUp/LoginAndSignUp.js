@@ -39,14 +39,14 @@ export default class LoginAndSignUp extends Component {
         const LoginContent =
             <div className="Login-Content">
                 <div className="Tab-Bar">
-                    <div id="Login" onClick={this.handleTabSelect} className={this.state.TabSelected == "Login" ? "selected" : ""}>Log in</div>
+                    <div id="Login" onClick={this.handleTabSelect} className={this.state.TabSelected == "Login" ? "selected" : ""}>Login</div>
                     <div id="Signup" onClick={this.handleTabSelect} className={this.state.TabSelected == "Signup" ? "selected" : ""}>Sign up</div>
                 </div>
                 {loginTabContent}
             </div>
         return (
             <div className="Login-Container">
-                <button onClick={this.showModal}> login</button>
+                <button onClick={this.showModal}>login</button>
                 {this.state.displayModal &&
                     <Modal OnClickHandle={this.hideModal} CallBackHandle={this.funcHandle}>
                         {LoginContent}
