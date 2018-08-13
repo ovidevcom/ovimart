@@ -12,15 +12,15 @@ const Category = (props) => (
                 <li><a href="#">Tops and Tees</a></li>
                 <li><a href="#">Jumpers and Knits</a></li>
                 <li><a href="#">Coats and Jackets</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
-                <li><a href="#">Jumpers and Knits</a></li>
+                <li><a href="#">Dresses</a></li>
+                <li><a href="#">Thermals</a></li>
+                <li><a href="#">Pants</a></li>
+                <li><a href="#">Skirts</a></li>
+                <li><a href="#">Jeans & Denim</a></li>
+                <li><a href="#">Shorts</a></li>
+                <li><a href="#">Maternity</a></li>
+                <li><a href="#">Swimwear</a></li>
+                <li><a href="#">Plus Size</a></li>
             </ul>
         </div>
         <div className="col">
