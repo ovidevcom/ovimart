@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import Link from 'next/link'
 import Modal from "./Modal"
 import "./LoginAndSignUp.scss"
-import "../Account.scss"
 import Login from "./Login/Login"
 import Signup from "./SignUp/SignUp"
+import "../Account.scss"
 export default class LoginAndSignUp extends Component {
     state = {
         displayModal: false,
-        TabSelected: "Login"
+        TabSelected: "Login",
     }
     showModal = () => {
         this.setState({
@@ -27,6 +28,12 @@ export default class LoginAndSignUp extends Component {
     funcHandle = e => {
         alert("click prevented")
     }
+    isUserLogin = () => {
+        return true
+    }
+    getUserName = () => {
+        return "CocaCola"
+    }
     render() {
         var loginTabContent = null;
         if (this.state.TabSelected == "Login") {
@@ -44,9 +51,21 @@ export default class LoginAndSignUp extends Component {
                 </div>
                 {loginTabContent}
             </div>
+        var outer = null;
+        if (this.isUserLogin())
+            outer =
+                <Link href="/account">
+                    <a>
+                        <div className="Button Button_primary">
+                            {`Hi! ${this.getUserName()}`}
+                        </div>
+                    </a>
+                </Link>
+        else
+            outer = <div onClick={this.showModal}>{this.props.children}</div>
         return (
             <div className="Login-Container">
-                <div onClick={this.showModal}>{this.props.children}</div>
+                {outer}
                 {this.state.displayModal &&
                     <Modal OnClickHandle={this.hideModal} CallBackHandle={this.funcHandle}>
                         {LoginContent}

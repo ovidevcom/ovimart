@@ -14,23 +14,22 @@ export default class accountPage extends Component {
   render() {
     return (
       <Layout>
-      <section id="layoutContainerWrapper">
-        <LoginAndSignUp />
-        <section className="accountView">
-
-          <section className="first">
-            <h2>My Account</h2>
-            <nav>
-              <a href="/orders">My Orders</a>
-              <a href="/" className="signoutBtn" onClick={this.signOut}>Log Out</a>
-            </nav>
+        <section id="layoutContainerWrapper">
+        <LoginAndSignUp><div className="Button">Sign in</div></LoginAndSignUp>
+          <section className="accountView">  
+            <section className="first">
+              <h2>My Account</h2>
+              <nav>
+                <a href="/orders">My Orders</a>
+                <a href="/" className="signoutBtn" onClick={this.signOut}>Log Out</a>
+              </nav>
+            </section>
+            <AccountInfo />
+            <CreditCard />
+            <ChangePassword />
           </section>
-          <AccountInfo />
-          <CreditCard />
-          <ChangePassword />
         </section>
-      </section>
-    </Layout>
+      </Layout>
     )
   }
 }
