@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import "../Account.scss"
-import "./ChangePassword.scss"
+import "../../../styles/Account/Account.scss"
+import "../../../styles/Account/ChangePassword/ChangePassword.scss"
 import Validation from "../Validation"
 export default class ChangePassword extends Component {
     state = {
@@ -40,9 +40,9 @@ export default class ChangePassword extends Component {
   
     checkSubmitErrorStatus = () => {
         return (this.state.currentPassword.length != 0 &&
-            Validation.isPasswordValid(this.state.newPassword) &&
+            Validation.isPasswordValid(this.state.newPassword)=="" &&
             this.state.currentPassword != this.state.confirmPassword &&
-            Validation.isConfirmPasswordValid(this.state.newPassword,this.state.confirmPassword)
+            Validation.isConfirmPasswordValid(this.state.newPassword,this.state.confirmPassword)==""
         )
     }
     render() {

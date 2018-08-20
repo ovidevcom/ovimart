@@ -1,5 +1,5 @@
 import Layout from "../components/TheLayout"
-import "../components/Account/Account.scss"
+import "../styles/Account/Account.scss"
 import AccountInfo from "../components/Account/AccountInfo/AccountInfo"
 import CreditCard from "../components/Account/CreditCard/CreditCard"
 import ChangePassword from "../components/Account/ChangePassword/ChangePassword"

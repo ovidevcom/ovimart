@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import "./CreditCard.scss"
-import "../Account.scss"
+import "../../../styles/Account/CreditCard/CreditCard.scss"
+import "../../../styles/Account/Account.scss"
 import Validation from "../Validation"
 export default class CreditCard extends Component {
     state = {
@@ -59,8 +59,8 @@ export default class CreditCard extends Component {
         })
     }
     checkSubmitErrorStatus = () => {
-        return (Validation.isNameValid(this.state.name)=="" && Validation.isCvvValid(this.state.cvv)=="" &&
-            Validation.isDateValid(this.state.expiry)=="" && Validation.isCardNumberValid(this.state.cardNumber))==""
+        return (Validation.isNameValid(this.state.name)==="" && Validation.isCvvValid(this.state.cvv)==="" &&
+            Validation.isDateValid(this.state.expiry)==="" && Validation.isCardNumberValid(this.state.cardNumber)==="")
     }
     render() {
         const isSaveEnable = this.checkSubmitErrorStatus();

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Link from 'next/link'
-import Modal from "./Modal"
-import "./LoginAndSignUp.scss"
-import Login from "./Login/Login"
-import Signup from "./SignUp/SignUp"
-import "../Account.scss"
+import Modal from "../Modal/Modal"
+import "../../../styles/Account/LoginAndSignUp/LoginAndSignUp.scss"
+import Login from "./Login"
+import Signup from "./SignUp"
+import "../../../styles/Account/Account.scss"
 export default class LoginAndSignUp extends Component {
     state = {
         displayModal: false,
@@ -29,25 +29,24 @@ export default class LoginAndSignUp extends Component {
         alert("click prevented")
     }
     isUserLogin = () => {
-        return true
+        return false
     }
     getUserName = () => {
         return "CocaCola"
     }
     render() {
         var loginTabContent = null;
-        if (this.state.TabSelected == "Login") {
+        if (this.state.TabSelected === "Login") {
             loginTabContent = <Login />
         }
-        else
-            if (this.state.TabSelected == "Signup") {
-                loginTabContent = <Signup />
-            }
+        else if (this.state.TabSelected === "Signup") {
+            loginTabContent = <Signup />
+        }
         const LoginContent =
             <div className="Login-Content">
                 <div className="Tab-Bar">
-                    <div id="Login" onClick={this.handleTabSelect} className={this.state.TabSelected == "Login" ? "selected" : ""}>Login</div>
-                    <div id="Signup" onClick={this.handleTabSelect} className={this.state.TabSelected == "Signup" ? "selected" : ""}>Sign up</div>
+                    <div id="Login" onClick={this.handleTabSelect} className={this.state.TabSelected === "Login" ? "selected" : ""}>Login</div>
+                    <div id="Signup" onClick={this.handleTabSelect} className={this.state.TabSelected === "Signup" ? "selected" : ""}>Sign up</div>
                 </div>
                 {loginTabContent}
             </div>

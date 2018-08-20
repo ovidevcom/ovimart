@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import "./AccountInfo.scss"
-import "../Account.scss"
+import "../../../styles/Account/AccountInfo/AccountInfo.scss"
+import "../../../styles/Account/Account.scss"
 import Validation from "../Validation"
 export default class AccountInfo extends Component {
   state = {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import "../../Account.scss"
-import Validation from "../../Validation"
+import '../../../styles/Account/Account.scss'
+import Validation from "../Validation"
 export default class Login extends Component {
     state = {
         email: "",
