@@ -1,0 +1,37 @@
+.Login-Content{
+    display: block;
+    width: 500px;
+    padding: 15px;
+    border: 1px solid #44ddaa;
+    border-radius: 8px;
+    background: radial-gradient( #84CF6A, #16C0B0);
+    text-decoration: none;
+}
+.Tab-Bar{
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+    border-bottom: solid 1px white;
+    color: white;
+    font-size: 2em;
+    text-shadow: 1px 2px 3px #eee;
+}
+.Tab-Bar>div{
+    box-sizing: border-box;
+    margin: 0 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.Tab-Bar>div.selected{
+    border-bottom: solid 4px red;
+}
+
+.Tab-Content{
+    box-sizing: border-box;
+    display: block;
+    padding-top: 15px;
+}
+.Tab-Content>div{
+    box-sizing: border-box;
+    margin: 3px;
+}
