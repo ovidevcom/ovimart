@@ -36,19 +36,7 @@ export default class SignUp extends Component {
             errors: errors
         })
     }
-    isEmailValid = (str) => {
-        if (str.length == 0) return "You can't leave this empty.";
-        return (/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$/.test(str)) ? "" : "This email is invalid.";
-    }
-    isPasswordValid = (str) => {
-        if (str.length == 0) return "You can't leave this empty.";
-        return /(?=.*\d)(?=.*[a-zA-Z]).{8,}/.test(str) ? "" : "This password is invalid.";
-    }
-    isConfirmPasswordValid = (str) => {
-        if (str.length == 0) return "You can't leave this empty.";
-        if (this.state.newPassword.length == 0) return false;
-        return (this.state.newPassword == str) ? "" : "The two password do not match."
-    }
+  
     checkSubmitErrorStatus = () => {
         return (this.isEmailValid(this.state.email) == "" &&
             this.isPasswordValid(this.state.newPassword) == "" &&
