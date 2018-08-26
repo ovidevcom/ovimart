@@ -1,0 +1,107 @@
+.icon{
+    font-size: 20px;
+    margin: 15px;
+    color: #8888;
+    cursor: pointer;
+    transition: 0.7s;
+}
+.icon:hover{
+    color: red;
+}
+.CartList{
+    display: block;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 0;
+    :last-child{
+        border-bottom: none;
+    }
+}
+
+.CartItem{
+    display: flex;
+    border-bottom: 1px dashed #aaaaaa;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+.CartItemImg{
+    display: inline-flex;
+    height: 100%;
+    width: 133px;
+}
+.CartItemDetail{
+display: inline-flex;
+width: 57%;
+flex-direction: column;
+justify-content: space-around;
+padding: 7px;
+div{
+    margin: 3px 0;
+}
+}
+.ItemName{
+    display: block;
+    width: 100%;
+    font-size: 1.4em;
+    overflow: hidden;
+}
+.ItemTitle{
+    display: block;
+    color: #555555;
+    overflow: hidden;
+    height: 50px;
+}
+.ItemUnit{
+    display: block;
+    color:gray;
+    font-size: 0.9em;
+    overflow: hidden;
+    font-style: italic;
+}
+.ItemPrice{
+    display: block;
+    color: black;
+}
+.HotPrice{
+    color: red;
+    font-weight:bolder;
+}
+.OldPrice{
+    text-decoration: line-through;
+    color: gray;
+    font-size: 0.9em;
+    font-weight:normal;
+}
+.CartItemQuantity{
+    display: inline-flex;
+    width: 40px;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 5px;
+    box-sizing: border-box;
+    div{
+        width: 100%
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+}
+.ItemQuantity{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.CartItemTotalPrice{
+ display: inline-block;
+ flex-direction: column;
+ justify-content: center;
+ height: 100%;
+ width: 30px;
+ margin: 0 10px;
+}
