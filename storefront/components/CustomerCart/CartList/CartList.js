@@ -12,8 +12,8 @@ class CartList extends Component {
         var list = [{
             id: "00000",
             name: "Cakeunit",
-            title: "Sweet's syndrome is a rare skin condition. Its main signs include fever and painful skin lesions that appear mostly on your arms, neck, head and trunk.",
-            detail: "unhealth",
+            title: "unhealthy",
+            detail: "Sweet's syndrome is a rare skin condition. Its main signs include fever and painful skin lesions that appear mostly on your arms, neck, head and trunk.",
             price: 99.9,
             unit: "piece",
             quantity: 2,
@@ -90,6 +90,10 @@ class CartList extends Component {
             return item.id === id
         })
         itemList[itemIndex].quantity = parseFloat(event.target.value);
+        // if (itemList[itemIndex].quantity <= 0) {
+        //     this.deleteCartItem(itemIndex);
+        //     return
+        // }
         this.setState({
             cart: itemList
         })
@@ -97,10 +101,10 @@ class CartList extends Component {
     handleCartItemQuantity = (itemIndex, num) => {
         let itemList = [...this.state.cart];
         itemList[itemIndex].quantity += num;
-        if (itemList[itemIndex].quantity <= 0) {
-            this.deleteCartItem(itemIndex);
-            return
-        }
+        // if (itemList[itemIndex].quantity <= 0) {
+        //     this.deleteCartItem(itemIndex);
+        //     return
+        // }
         this.setState({
             cart: itemList
         })
@@ -130,14 +134,17 @@ class CartList extends Component {
                             <div className={ItemPriceClassName}>${(item.price - item.discount).toFixed(2)} {oldPrice}</div>
                         </div>
                         <div className="CartItemQuantity">
-                            <div class="fas fa-angle-up icon" onClick={() => this.handleCartItemQuantity(index, 1)}
+                            <div class="fas fa-angle-up Icon" 
+                            onClick={() => this.handleCartItemQuantity(index, 1)}
                             ></div>
-                            <input type='number' inputMode='numeric' className="ItemQuantity" value={item.quantity} onChange={(event) => this.handleCartItemQuantityChange(event, item.id)} />
-                            <div class="fas fa-angle-down icon" onClick={() => this.handleCartItemQuantity(index, -1)}
+                            <input type='number' inputMode='numeric' className="ItemQuantity" value={item.quantity} 
+                            onChange={(event) => this.handleCartItemQuantityChange(event, item.id)} />
+                            <div class={`fas fa-angle-down Icon ${(item.quantity==1)&&"Icon_disable"}`}  
+                            onClick={item.quantity>1?() => this.handleCartItemQuantity(index, -1):null}
                             ></div>
                         </div>
                         <div className="CartItemTotalPrice">{((item.price - item.discount) * item.quantity).toFixed(2)}</div>
-                        <div class="fas fa-times icon" onClick={() => this.deleteCartItem(index)} />
+                        <div class="fas fa-times Icon" onClick={() => this.deleteCartItem(index)} />
                     </div>
                 })}
             </ul>)

@@ -20,21 +20,27 @@
         opacity: 1;
     }
 }
-.icon{
+
+.Icon{
     font-size: 20px;
     margin: 15px;
-    color: #8888;
+    color: #555555;
     cursor: pointer;
     transition: 0.7s;
 }
-.icon:hover{
+.Icon:hover{
     color: red;
+}
+.Icon.Icon_disable,
+.Icon.Icon_disable:hover{
+    color: #aaaaaa;  
 }
 .CartList{
     display: block;
     flex-direction: column;
-    width: 100%;
+    width: 60%;
     padding: 10px 0;
+    transition: height 1s;
     :last-child{
         border-bottom: none;
     }
@@ -136,6 +142,12 @@ div{
  flex-direction: column;
  justify-content: center;
  height: 100%;
- width: 30px;
+ width: 40px;
  margin: 0 10px;
+}
+
+@media screen and (max-width: 800px){
+    .CartList{
+        width: 100%;
+    }
 }

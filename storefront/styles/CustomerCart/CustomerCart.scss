@@ -16,9 +16,10 @@
     font-size: 42px;
 }
 .CartContainer{
-    margin: 25px;
-    width: 60%;
+    margin: 15px 0;
+    box-sizing: border-box;
 }
 .CartContainer>.title{
+    padding: 10px 0;
     border-bottom: solid 1px #bbb;
 }
