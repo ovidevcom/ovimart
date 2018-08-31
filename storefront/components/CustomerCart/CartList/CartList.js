@@ -3,8 +3,8 @@ import "../../../styles/CustomerCart/CartList/CartList.scss"
 import Loader from "../../Loader/Loader"
 class CartList extends Component {
     state = {
-        cart: [
-        ],
+        cart: [],
+        couponCode: [],
         loading: true
 
     }
@@ -116,6 +116,40 @@ class CartList extends Component {
             cart: itemList
         })
     }
+    getSubTotalPrice = () => {
+        var subTotal = 0;
+        this.state.cart.map(item => {
+            subTotal += (item.price - item.discount) * item.quantity
+        })
+        return subTotal
+    }
+    getDeliveryFee = () => {
+        return 15.98
+    }
+    checkCouponCode = (couponCode) => {
+        return couponCode.length > 0;
+    }
+    addCouponCode = () => {
+        var couponCodeList = this.state.couponCode;
+        var code = {
+            code: document.getElementById("Coupon_input").value,
+            discount: 9.9
+        }
+
+        if (this.checkCouponCode(code.code)) {
+            couponCodeList.push(code);
+            this.setState({
+                couponCode: couponCodeList,
+            })
+        }
+    }
+    getCouponCodeDiscount = () => {
+        var totalCouponDiscount = 0;
+        this.state.couponCode.map(code => {
+            totalCouponDiscount += code.discount;
+        })
+        return totalCouponDiscount
+    }
     render() {
         var renderCartList = (
             <ul className="CartList">
@@ -134,13 +168,13 @@ class CartList extends Component {
                             <div className={ItemPriceClassName}>${(item.price - item.discount).toFixed(2)} {oldPrice}</div>
                         </div>
                         <div className="CartItemQuantity">
-                            <div class="fas fa-angle-up Icon" 
-                            onClick={() => this.handleCartItemQuantity(index, 1)}
+                            <div class="fas fa-angle-up Icon"
+                                onClick={() => this.handleCartItemQuantity(index, 1)}
                             ></div>
-                            <input type='number' inputMode='numeric' className="ItemQuantity" value={item.quantity} 
-                            onChange={(event) => this.handleCartItemQuantityChange(event, item.id)} />
-                            <div class={`fas fa-angle-down Icon ${(item.quantity==1)&&"Icon_disable"}`}  
-                            onClick={item.quantity>1?() => this.handleCartItemQuantity(index, -1):null}
+                            <input type='number' inputMode='numeric' className="ItemQuantity" value={item.quantity}
+                                onChange={(event) => this.handleCartItemQuantityChange(event, item.id)} />
+                            <div class={`fas fa-angle-down Icon ${(item.quantity == 1) && "Icon_disable"}`}
+                                onClick={item.quantity > 1 ? () => this.handleCartItemQuantity(index, -1) : null}
                             ></div>
                         </div>
                         <div className="CartItemTotalPrice">{((item.price - item.discount) * item.quantity).toFixed(2)}</div>
@@ -148,12 +182,53 @@ class CartList extends Component {
                     </div>
                 })}
             </ul>)
+        var subTotalPrice = this.getSubTotalPrice();
+        var deliveryFee = this.getDeliveryFee();
+        var total = subTotalPrice + deliveryFee - this.getCouponCodeDiscount();
+        var CheckOut = (
+            <div className="CheckOutPanel">
+                <div id="CheckOutButton" className="Button Button_primary">CHECK OUT</div>
+                <div className="Summary">
+                    <div id="SubTotal">
+                        <div>Subtotal</div>
+                        <div >${subTotalPrice.toFixed(2)}</div>
+                    </div>
+                    <div id="DeliveryFee">
+                        <div>Delivery fee</div>
+                        <div >${deliveryFee.toFixed(2)}</div>
+                    </div>
+                    <div className="Coupon_container">
+                        <div className="Coupon_input_container">
+                            <input id="Coupon_input" type="text" placeholder="Coupon code" />
+                            <div id="Coupon_Button" onClick={this.addCouponCode} className="Button Button_primary">ENTER</div>
+                        </div>
+                        {this.state.couponCode.length > 0 &&
+                            <ul className="CouponCodeList">
+                                {this.state.couponCode.map(item => {
+                                    return <div>
+                                        <div className="CouponCode">{item.code}</div>
+                                        <div className="CouponCodeDiscount">-${item.discount}</div>
+                                    </div>
+                                })}
+                            </ul>}
+                    </div>
+                    <div id="Total">
+                        <div>Total</div>
+                        <div >${total.toFixed(2)}</div>
+                    </div>
+                </div>
 
+            </div>
+        )
         return (
             <section className="CartContainer">
-                {this.state.loading&&<Loader/>}
+                {this.state.loading && <Loader />}
                 <div className="title main">Cart</div>
-                {renderCartList}
+                <div className="CartList_container">
+                    {renderCartList}
+                    {CheckOut}
+                </div>
+
             </section>
         );
     }
